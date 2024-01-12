@@ -54,11 +54,18 @@ The Reviewers section in the NITCONF outlines specific functionalities for revie
 Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.
 
 ### 1.3 Intended Audience and Reading Suggestions
-Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.
+The document is intended to serve several groups of audience members :
+● Firstly, System designers will heavily rely on the SRS to create the blueprint for the Reviewer's section of the NITCONF website.
+● Secondly, developers and testers will refer to the SRS to ensure that the implementation aligns with the specified requirements.
+● Thirdly, the Reviewers who are the client for the project, will carefully review the SRS to gain a comprehensive understanding of the fundamental product functionalities. This document will serve as a basis for aligning their expectations with the system's capabilities.
+● The application maintenance staff can consult the SRS document to gain clarity on the current functionality, providing a valuable reference for post-implementation activities.
+
 ### 1.4 Product Scope
-Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
-### 1.5 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+The reviewers section would contain a login page. After logging in it would would lead to a homepage for the reviwers that would display the papers assigned to them. The reviewers will be able to see all the papers assigned to them in a row wise fashion. They can then review the papers , edit/submit the reviews and ask for further revisions of the paper. 
+
+### 1.5 References 
+https://www.springer.com/gp/computer-science/lncs/online-conference-service
+https://support.springer.com/en/support/solutions/articles/6000245514-description-of-the-end-to-end-process-in-equinocs
 
 ## Overall Description
 ### 2.1 Product Perspective
