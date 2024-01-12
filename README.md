@@ -106,11 +106,24 @@ Don’t really say “System Feature 1.” State the feature name in just a few 
 
 ### 4.2 System Feature 2 (and so on)
 
+
+
+
+
+---siririiririr----------
 ## Other Nonfunctional Requirements
+
 ### 5.1 Performance Requirements
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
-### 5.2 Safety Requirements
-Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the product’s design or use. Define any safety certifications that must be satisfied.
+System is designed to help reviewers review papers assigned to them. It involves the dynamic process of paper-review management with efficiency and precision. Some important functionalities of the reviewer include accepting/rejecting/editing/deleting/declining/accept upon further revision.
+   #### Response time and efficiency
+   system will respond in less than a second of submitting the request. Tasks like viewing his/her/their reviewed papers history might take some extra seconds but the overall performance will be fast and efficient.
+   Can use a mix of Server side rendering for the intial load of the page for better SEO (search engine optimization) and then Client side rendering for dynamic interactions.
+
+
+### 5.2 Safety Requirements and Security requirements
+The system will store all the data in a secure database. The reviewers will be able to view information but will not have the privilege to modify/edit it if the PC chair has already processed it. This privilege will be given to the PC committee and only they have the right to update the database. These are the two different types of accessors and have varying access constraints.
+In terms of the safety aspect, the system does not pose a threat to its users. To combat attacks by malware, backing up the database is advised.
+
 ### 5.3 Security Requirements
 Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
 ### 5.4 Software Quality Attributes
