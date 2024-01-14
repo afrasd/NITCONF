@@ -1,10 +1,7 @@
 # NITCONF
 NITCONF is a conference website designed to facilitate paper submissions for evaluation. The platform enables reviewers to assess papers assigned to them by the Program Committee. The repository encompasses the entire Reviewers Project for this conference.
 
-###Siri Pagadala
-#### i'm making changes to my branch content
 
-#### last change want to see how pushing works!
 
 Table of Contents
 =================
@@ -79,9 +76,53 @@ Describe the context and origin of the product being specified in this SRS. For 
 ### 2.2 Product Functions
 Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
 ### 2.3 User Classes and Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+**User - Reviewer**
+- **Frequency of use**: Reviewers engage with the system intensively during the conference periods.
+- **Functions used**: 
+	- **paper review**: reviewers will be able to give the review based on some metrics such as originality, relevance, quality, readability, technical soundness etc, additionally they would be able to give a confidence rating. finally they can accept/reject the paper or click on another option called review. After finalizing the changes they can submit the review to the PC. 
+	- **Commenting and Feedback**: They provide detailed comments and feedback for each paper, which may include critiques, suggestions for improvement, and overall assessments.
+- **Technical Expertise**: A simple understanding of basic computer based tasks is enough to navigate the system as it is user friendly.
+- ** Security Levels**: Reviewers require secure login credentials to login in to the system, this is done to ensure the integrity and confidentiality of the reviewing process.
+- **Educational Level and Experience**: They possess significant expertise in their respective academic or industry fields. They must also have experience in the reviewing process which would enable them to critique better and provide some insightful comments.
+
+**Pertinent Requirements**
+- easy access to assigned papers because of the user friendly UI.
+	- divided into two sections : to review and review
+- deadline tracking and submission status.
+	- a visible and clear display of the deadline for each paper to support timely reviews and submission along with reminders and notifications.
+	- real time status updation once the reviewer has submitted his review.
+- edit and resubmit capabilities available for reviewers.
+- confidentiality and anonymity between reviewers and the authors of the paper by enforcing a double blind situation.
+
 ### 2.4 Operating Environment
-Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.
+**General requirements**: NITCONF designed to be lightweight and accessible on platforms such as desktop computers and laptops.
+-**Performance Specification**: for optimal performance any modern processor, at least 8gb of ram and a stable internet connection re recommended for laptop and desktop users.
+-**Cross platform compatibility** irrespective of the OS , this application (NITCONF) can run smoothly.
+
+**Server Requirements**
+-Platform: Java-compatible server environment, as Spring Framework is Java-based.
+-Web Server: Compatible with servers like Apache Tomcat, Jetty, or similar servlet containers.
+-Java Version: Requires Java JDK 8 or higher, considering Spring Framework's requirements.
+-Memory and Storage: Sufficient RAM and disk space for handling concurrent user sessions and data storage. The exact requirements depend on the expected user load and data volume.
+
+**Client-Side Requirements**
+-Web Browsers: Compatible with modern web browsers including Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari. The application should be tested across these browsers for consistency.
+-JavaScript Enabled: As modern web applications often rely on JavaScript for dynamic content, users should have JavaScript enabled in their browsers.
+
+**Network Requirements**
+-Bandwidth and Connectivity: Adequate network speed and stability for seamless access and data exchange, especially important for data-intensive operations or real-time features.
+-Security Protocols: Utilizes HTTPS for secure communication over the internet.
+
+**Software Dependencies**
+-Spring Framework: The specific version of the Spring Framework used in development.
+-Database: Compatible with relational databases like MySQL, PostgreSQL, or similar, depending on the application's data persistence requirements.
+-Frontend Technologies: Might include HTML5, CSS3, JavaScript.
+
+**Deployment Environment**
+Containerization: If the application is containerized using Docker, Kubernetes, or similar technologies.
+CI/CD Pipelines: Integration with continuous integration and continuous deployment tools, if used.
+
+
 ### 2.5 Design and Implementation Constraints
 Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).
 ### 2.6 User Documentation
@@ -116,7 +157,7 @@ Don’t really say “System Feature 1.” State the feature name in just a few 
 
 
 
----siririiririr----------
+
 ## Other Nonfunctional Requirements
 
 ### 5.1 Performance Requirements
