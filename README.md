@@ -71,10 +71,17 @@ https://www.springer.com/gp/computer-science/lncs/online-conference-service
 https://support.springer.com/en/support/solutions/articles/6000245514-description-of-the-end-to-end-process-in-equinocs
 
 ## Overall Description
-### 2.1 Product Perspective
-Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.
-### 2.2 Product Functions
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
+### 2.1 Product Overview
+The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme CommitteeThe Reveiwers would be provided with a login page where they can login with their credentials. They will be 2 sections under it
+1. To Review
+All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
+2. Reviewed
+The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
+3. History
+The history tab will show all the papers reviewed by that reviewer so far with the status and date.
+
+![WhatsApp Image 2024-01-14 at 19 12 50](https://github.com/afrasd/NITCONF/assets/103187343/a0237b0e-9210-4adf-a5b9-446fcbd41d2e)
+
 ### 2.3 User Classes and Characteristics
 Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
 ### 2.4 Operating Environment
