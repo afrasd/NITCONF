@@ -13,7 +13,7 @@ Table of Contents
     * 1.4 [Product Scope](#14-product-scope)
     * 1.5 [References](#15-references)
   * [Overall Description](#overall-description)
-    * 2.1 [Product Perspective](#21-product-perspective)
+    * 2.1 [Product Overview](#21-product-overview)
     * 2.2 [Product Functions](#22-product-functions)
     * 2.3 [User Classes and Characteristics](#23-user-classes-and-characteristics)
     * 2.4 [Operating Environment](#24-operating-environment)
@@ -51,17 +51,40 @@ Table of Contents
 
 ## 1. Introduction
 ### 1.1 Purpose 
-The Reviewers section in the NITCONF outlines specific functionalities for reviewers. It details requirements and workflows, ensuring an efficient and seamless experience for reviewers in assessing and evaluating submitted papers.
+The Re­viewers section in the­ NITCONF explains what reviewe­rs can do. It gives rules and steps for re­viewers to easily and smoothly judge­ and rate papers that people­ send in.
 
-### 1.2 Document Conventions CHUCK BABYYYY
-Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.
+### 1.2 Document Conventions
+There are a few Documentation Conventions that are advised for the author to follow.
+#### i. Font and Style:
+* Use a consistent and easily readable font throughout the document, such as Times New Roman, Arial, or a similar standard font.
+* Differentiate headings and subheadings from the body text using appropriate font sizes or styles (e.g., bold for headings, italics for emphasis).
+
+#### ii. Highlighting:
+* Use bold or italics to emphasize important points, terms, or headings.
+* Consider using a monospaced font for code snippets or examples.
+
+#### iii. Prioritization:
+* Clearly define a prioritization scheme for requirements. This may include assigning priority levels (e.g., high, medium, low) or numerical values to each requirement.
+* Specify whether higher-level requirements' priorities are assumed to be inherited by detailed requirements, or if each requirement statement is to have its own priority.
+
+#### iv. Numbering and Structure:
+* Number requirements consistently for easy reference and traceability.
+* Follow a hierarchical structure, with higher-level requirements providing an overarching framework and detailed requirements nested beneath them.
+
+#### v. Formatting for Clarity:
+* Break down complex requirements into concise and clear statements.
+* Use bullet points or numbered lists for enumerating specific points within a requirement.
 
 ### 1.3 Intended Audience and Reading Suggestions
 The document is intended to serve several groups of audience members :
-● Firstly, System designers will heavily rely on the SRS to create the blueprint for the Reviewer's section of the NITCONF website.
-● Secondly, developers and testers will refer to the SRS to ensure that the implementation aligns with the specified requirements.
-● Thirdly, the Reviewers who are the client for the project, will carefully review the SRS to gain a comprehensive understanding of the fundamental product functionalities. This document will serve as a basis for aligning their expectations with the system's capabilities.
-● The application maintenance staff can consult the SRS document to gain clarity on the current functionality, providing a valuable reference for post-implementation activities.
+* System Designer:
+    * They are the primary audience. It provides crucial information guiding the design phase.
+* Program Committee:
+    * They are expected us to provide the reuired resources mentioned in the SRS Document.
+* Author:
+    * They are expected to upload the Document/ Thesis in the specified format.
+* Tester:
+    * They will refer to the SRS to ensure that the actual implementation aligns seamlessly with the specified requirements.
 
 ### 1.4 Product Scope
 The reviewers section would contain a login page. After logging in it would would lead to a homepage for the reviwers that would display the papers assigned to them. The reviewers will be able to see all the papers assigned to them in a row wise fashion. They can then review the papers , edit/submit the reviews and ask for further revisions of the paper. 
@@ -130,7 +153,7 @@ System is designed to help reviewers review papers assigned to them. It involves
    Can use a mix of Server side rendering for the intial load of the page for better SEO (search engine optimization) and then Client side rendering for dynamic interactions.
 
 
-### 5.2 Safety Requirements and Security requirements
+### 5.2 Safety Requirements
 The system will store all the data in a secure database. The reviewers will be able to view information but will not have the privilege to modify/edit it if the PC chair has already processed it. This privilege will be given to the PC committee and only they have the right to update the database. These are the two different types of accessors and have varying access constraints.
 In terms of the safety aspect, the system does not pose a threat to its users. To combat attacks by malware, backing up the database is advised.
 
