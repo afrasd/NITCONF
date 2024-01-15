@@ -158,11 +158,43 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 
 
 ### 2.5 Design and Implementation Constraints
-Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).
+## Security Concerns:
+Risks of unauthorized access and data breaches.
+## User Authentication and Authorization:
+Potential issues in login processes and user permission management.
+## User Experience (UX):
+Possible usability issues impacting user satisfaction.
+## Data Integrity and Validation:
+Risks of data corruption or acceptance of invalid data.
+## Scalability:
+Potential performance degradation with increased usage.
+## File Uploads: 
+Security vulnerabilities and risks associated with file uploads.
+## Review Workflow: 
+Inefficiencies or confusion in the paper review process.
+## Backup and Recovery: 
+Potential data loss without regular backups and recovery plan.
 ### 2.6 User Documentation
 List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
 ### 2.7 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+## Assumptions:
+# Third-Party Components:
+Assuming the availability and reliability of third-party libraries or frameworks used in the development of the website.
+# Internet Connectivity: 
+Assuming that users and reviewers have consistent internet access for seamless interaction with the platform.
+# Browser Compatibility:
+Assuming standard browser compatibility for optimal user experience.
+# User Cooperation:
+Assuming users will follow proper guidelines for paper submissions and reviews.
+## Dependencies:
+# External APIs: 
+Dependency on external APIs for features like user authentication or data retrieval.
+# Database System: 
+Dependency on the chosen database system for storing and retrieving paper and user data.
+# Hosting Service:
+Dependency on a reliable hosting service for the website to be accessible online.
+# Development Tools: 
+Dependency on specific development tools, languages, or frameworks.
 ## External Interface Requirements
 ### 3.1 User Interfaces
 Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
