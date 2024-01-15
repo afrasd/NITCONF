@@ -54,26 +54,7 @@ Table of Contents
 The Re­viewers section in the­ NITCONF explains what reviewe­rs can do. It gives rules and steps for re­viewers to easily and smoothly judge­ and rate papers that people­ send in.
 
 ### 1.2 Document Conventions
-There are a few Documentation Conventions that are advised for the author to follow.
-#### i. Font and Style:
-* Use a consistent and easily readable font throughout the document, such as Times New Roman, Arial, or a similar standard font.
-* Differentiate headings and subheadings from the body text using appropriate font sizes or styles (e.g., bold for headings, italics for emphasis).
-
-#### ii. Highlighting:
-* Use bold or italics to emphasize important points, terms, or headings.
-* Consider using a monospaced font for code snippets or examples.
-
-#### iii. Prioritization:
-* Clearly define a prioritization scheme for requirements. This may include assigning priority levels (e.g., high, medium, low) or numerical values to each requirement.
-* Specify whether higher-level requirements' priorities are assumed to be inherited by detailed requirements, or if each requirement statement is to have its own priority.
-
-#### iv. Numbering and Structure:
-* Number requirements consistently for easy reference and traceability.
-* Follow a hierarchical structure, with higher-level requirements providing an overarching framework and detailed requirements nested beneath them.
-
-#### v. Formatting for Clarity:
-* Break down complex requirements into concise and clear statements.
-* Use bullet points or numbered lists for enumerating specific points within a requirement.
+This document follows IEEE formatting requirements.
 
 ### 1.3 Intended Audience and Reading Suggestions
 The document is intended to serve several groups of audience members :
