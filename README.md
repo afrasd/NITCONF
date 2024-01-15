@@ -158,22 +158,14 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 
 
 ### 2.5 Design and Implementation Constraints
-## Security Concerns:
-Risks of unauthorized access and data breaches.
-## User Authentication and Authorization:
-Potential issues in login processes and user permission management.
-## User Experience (UX):
-Possible usability issues impacting user satisfaction.
-## Data Integrity and Validation:
-Risks of data corruption or acceptance of invalid data.
-## Scalability:
-Potential performance degradation with increased usage.
-## File Uploads: 
-Security vulnerabilities and risks associated with file uploads.
-## Review Workflow: 
-Inefficiencies or confusion in the paper review process.
-## Backup and Recovery: 
-Potential data loss without regular backups and recovery plan.
+**Security Concerns**: Risks of unauthorized access and data breaches.
+**User Authentication and Authorization**: Potential issues in login processes and user permission management.
+**User Experience (UX)**:Possible usability issues impacting user satisfaction.
+**Data Integrity and Validation**:Risks of data corruption or acceptance of invalid data.
+**Scalability**:Potential performance degradation with increased usage.
+**File Uploads**:Security vulnerabilities and risks associated with file uploads.
+**Review Workflow**: Inefficiencies or confusion in the paper review process.
+**Backup and Recovery**: Potential data loss without regular backups and recovery plan.
 ### 2.6 User Documentation
 List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
 ### 2.7 Assumptions and Dependencies
