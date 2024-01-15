@@ -174,6 +174,7 @@ List the user documentation components (such as user manuals, on-line help, and 
 - **Internet Connectivity**:Assuming that users and reviewers have consistent internet access for seamless interaction with the platform.
 - **Browser Compatibility**:Assuming standard browser compatibility for optimal user experience.
 - **User Cooperation**:Assuming users will follow proper guidelines for paper submissions and reviews.
+- **work Flow**:Assigned by the program committee, reviewers submit their evaluations, and the committee provides the final response to authors. All communication between reviewers and authors is facilitated through the program committee for efficiency and coherence.
 ## Dependencies:
 - **External APIs**:Dependency on external APIs for features like user authentication or data retrieval.
 - **Database System**:Dependency on the chosen database system for storing and retrieving paper and user data.
