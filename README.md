@@ -87,7 +87,10 @@ The document is intended to serve several groups of audience members :
     * They will refer to the SRS to ensure that the actual implementation aligns seamlessly with the specified requirements.
 
 ### 1.4 Product Scope
-The reviewers section would contain a login page. After logging in it would would lead to a homepage for the reviwers that would display the papers assigned to them. The reviewers will be able to see all the papers assigned to them in a row wise fashion. They can then review the papers , edit/submit the reviews and ask for further revisions of the paper. 
+* The reviewers section would contain a login page.
+* After logging in it would would lead to a homepage for the reviwers that would display the papers assigned to them.
+* The reviewers will be able to see all the papers assigned to them in a row wise fashion.
+* They can then review the papers , edit/submit the reviews. 
 
 ### 1.5 References 
 https://www.springer.com/gp/computer-science/lncs/online-conference-service
