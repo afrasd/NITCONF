@@ -24,8 +24,8 @@ Table of Contents
     * 3.1 [User Interfaces](#31-user-interfaces)
     * 3.2 [Hardware Interfaces](#32-hardware-interfaces)
     * 3.3 [Software Interfaces](#33-software-interfaces)
-    * 3.4 [Communications Interfaces](#34-communications-interfaces)
-  * [System Features](#system-features)
+    
+  <!-- * [System Features](#system-features)
     * 4.1 [System Feature 1](#41-system-feature-1)
     * 4.2 [System Feature 2 (and so on)](#42-system-feature-2-and-so-on)
   * [Other Nonfunctional Requirements](#other-nonfunctional-requirements)
@@ -39,15 +39,15 @@ Table of Contents
 * [Appendix B: Analysis Models](#appendix-b-analysis-models)
 * [Appendix C: To Be Determined List](#appendix-c-to-be-determined-list)
 
+ -->
 
-
-
+<!-- 
 ## Revision History
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
 |      |         |                     |           |
 |      |         |                     |           |
-|      |         |                     |           |
+|      |         |                     |           | -->
 
 ## 1. Introduction
 ### 1.1 Purpose 
@@ -182,14 +182,44 @@ List the user documentation components (such as user manuals, on-line help, and 
 - **Development Tools**:Dependency on specific development tools, languages, or frameworks.
 ## External Interface Requirements
 ### 3.1 User Interfaces
-Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
+Our platform's user interface has been meticulously crafted to provide a user-friendly and efficient experience for reviewers. Upon logging in, reviewers will be greeted with a clean and intuitive dashboard that offers quick access to their assigned submissions. The interface incorporates clear navigation menus, allowing reviewers to seamlessly move between different sections of the platform.
+
+Within each submission, the user interface allows reviewers to access abstracts, full papers, and supplementary materials with ease. A centralized hub for reviewing activities, including providing feedback, assigning scores.
 ### 3.2 Hardware Interfaces
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+- Desktop/Laptop:
+
+  - Processor: A dual-core processor or equivalent for smooth processing.
+
+  - RAM: 4 GB or higher to handle multiple tasks concurrently.
+
+  - Display: A screen resolution of 1280x800 or higher for an optimal viewing experience.
 ### 3.3 Software Interfaces
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
-### 3.4 Communications Interfaces
-Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.
-## System Features
+1. Integration with External Software Components:
+
+- a. Database Management System:
+
+  - Name and Version: MYSQL 8.0
+  
+
+- b. Operating System:
+
+  - Name and Version: Ubuntu / MacOS / Windows
+
+- c. Frontend Framework:
+
+  - Name and Version: HTML, CSS, JS
+
+2. Data Flow and Messages:
+
+ - a. Incoming Data:
+
+     -  Submission Data: Handled by Spring MVC controllers, data from submitted papers will be processed and stored in the MYSQL database.
+
+- b. Outgoing Data:
+
+   - Review Feedback: Managed by Spring MVC controllers, sending review feedback stored in MYSQL to the frontend.
+
+<!-- ## System Features
 This template illustrates organizing the functional requirements for the product by system features, the major services provided by the product. You may prefer to organize this section by use case, mode of operation, user class, object class, functional hierarchy, or combinations of these, whatever makes the most logical sense for your product.
 ### 4.1 System Feature 1
 Don’t really say “System Feature 1.” State the feature name in just a few words.
@@ -236,4 +266,4 @@ Define all the terms necessary to properly interpret the SRS, including acronyms
 ### Appendix B: Analysis Models
 Optionally, include any pertinent analysis models, such as data flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
 ### Appendix C: To Be Determined List
-Collect a numbered list of the TBD (to be determined) references that remain in the SRS so they can be tracked to closure.
+Collect a numbered list of the TBD (to be determined) references that remain in the SRS so they can be tracked to closure. -->
