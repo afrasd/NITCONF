@@ -115,12 +115,13 @@ Summarize the major functions the product must perform or must let the user perf
 
 **Software Dependencies**
 -Spring Framework: The specific version of the Spring Framework used in development.
--Database: Compatible with relational databases like MySQL, PostgreSQL, or similar, depending on the application's data persistence requirements.
+-Database: Compatible with relational databases like MySQL, MySQL workbench, PostgreSQL, or similar, depending on the application's data persistence requirements.
 -Frontend Technologies: Might include HTML5, CSS3, JavaScript.
 
 **Deployment Environment**
-Containerization: If the application is containerized using Docker, Kubernetes, or similar technologies.
-CI/CD Pipelines: Integration with continuous integration and continuous deployment tools, if used.
+Containerization: The application is containerized using Docker, Kubernetes.
+API testing tools: POstman, swagger.io, SoapUI.
+CI/CD Pipelines: Integration with continuous integration and continuous deployment tools.
 
 
 ### 2.5 Design and Implementation Constraints
