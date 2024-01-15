@@ -108,7 +108,7 @@ The history tab will show all the papers reviewed by that reviewer so far with t
 
 ![WhatsApp Image 2024-01-14 at 19 12 50](https://github.com/afrasd/NITCONF/assets/103187343/a0237b0e-9210-4adf-a5b9-446fcbd41d2e)
 
-### 2.3 User Classes and Characteristics
+### 2.2 User Classes and Characteristics
 **User - Reviewer**
 - **Frequency of use**: Reviewers engage with the system intensively during the conference periods.
 - **Functions used**: 
@@ -127,7 +127,7 @@ The history tab will show all the papers reviewed by that reviewer so far with t
 - edit and resubmit capabilities available for reviewers.
 - confidentiality and anonymity between reviewers and the authors of the paper by enforcing a double blind situation.
 
-### 2.4 Operating Environment
+### 2.3 Operating Environment
 **General requirements**: NITCONF designed to be lightweight and accessible on platforms such as desktop computers and laptops.
 -**Performance Specification**: for optimal performance any modern processor, at least 8gb of ram and a stable internet connection re recommended for laptop and desktop users.
 -**Cross platform compatibility** irrespective of the OS , this application (NITCONF) can run smoothly.
@@ -157,7 +157,7 @@ API testing tools: POstman, swagger.io, SoapUI.
 CI/CD Pipelines: Integration with continuous integration and continuous deployment tools.
 
 
-### 2.5 Design and Implementation Constraints
+### 2.4 Design and Implementation Constraints
 - **Security Concerns**: Risks of unauthorized access and data breaches.
 - **User Authentication and Authorization**: Potential issues in login processes and user permission management.
 - **User Experience (UX)**:Possible usability issues impacting user satisfaction.
@@ -166,20 +166,55 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 - **File Uploads**:Security vulnerabilities and risks associated with file uploads.
 - **Review Workflow**: Inefficiencies or confusion in the paper review process.
 - **Backup and Recovery**: Potential data loss without regular backups and recovery plan.
-### 2.6 User Documentation
-List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
-### 2.7 Assumptions and Dependencies
+
+### 2.5 User Documentation
+#### Login and Dashboard Navigation
+- **Login**: Reviewers log in with their credentials and are directed to the reviewer dashboard.
+- **Profile**: The user's profile icon is displayed in the top right corner, linking to the profile page.
+- **Side Navigation Bar**: Features a collapsible navigation with the following options:
+  - **To Review**: A list of papers assigned for review.
+  - **Reviewed**: Papers that have been reviewed by the user.
+  - **View History**: A history of papers reviewed in the past 6 months.
+
+## Pages and Functionalities
+### 'To Review' Page
+- **Layout**: Displays assigned papers in a row-wise manner.
+- **Columns**:
+  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  2. **Paper Title and Actions**: Shows the paper's title with 'Review' and 'Display All' options. 'Review' opens a pop-up for rating, commenting, and final actions ('Accept', 'Reject', or 'Revise'). 'Display All' reveals all previous comments/reviews.
+  3. **Status**: Indicates the current status of the paper (Accept/Reject).
+  4. **Revision**: Shows the revision round of the paper (e.g., first, second).
+  5. **Deadline**: Lists the review deadline set by the Program Committee.
+
+### 'Reviewed' Page
+- **Content**: Lists all reviewed papers.
+- **Columns**:
+  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  2. **Paper Title and Edit Options**: Displays the paper's title with 'Edit' and 'Display All' buttons. 'Edit' allows modification of the most recent review. 'Display All' shows all past reviews.
+  3. **Status**: The final status of the paper (Accept/Reject).
+  4. **Deadline**: The review deadline, after which the paper is removed from this page.
+  
+### 'View History' Page
+- **Content**: Lists all reviewed papers in the last 6 months.
+- **Columns**:
+  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  2. **Paper Title and Edit Options**: Displays the paper's title with a 'Display All' button.
+  3. **Status**: The final status of the paper (Accept/Reject).
+  
+### 2.6 Assumptions and Dependencies
 ## Assumptions:
 - **Third-Party Components**: Assuming the availability and reliability of third-party libraries or frameworks used in the development of the website.
 - **Internet Connectivity**: Assuming that users and reviewers have consistent internet access for seamless interaction with the platform.
 - **Browser Compatibility**: Assuming standard browser compatibility for optimal user experience.
 - **User Cooperation**: Assuming users will follow proper guidelines for paper submissions and reviews.
 - **Work Flow**: Assigned by the program committee, reviewers submit their evaluations, and the committee provides the final response to authors. All communication between reviewers and authors is facilitated through the program committee for efficiency and coherence.
+
 ## Dependencies:
 - **External APIs**:Dependency on external APIs for features like user authentication or data retrieval.
 - **Database System**:Dependency on the chosen database system for storing and retrieving paper and user data.
 - **Hosting Service**:Dependency on a reliable hosting service for the website to be accessible online.
 - **Development Tools**:Dependency on specific development tools, languages, or frameworks.
+
 ## External Interface Requirements
 ### 3.1 User Interfaces
 Our platform's user interface has been meticulously crafted to provide a user-friendly and efficient experience for reviewers. Upon logging in, reviewers will be greeted with a clean and intuitive dashboard that offers quick access to their assigned submissions. The interface incorporates clear navigation menus, allowing reviewers to seamlessly move between different sections of the platform.
