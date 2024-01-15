@@ -68,14 +68,20 @@ The document is intended to serve several groups of audience members :
     * They will refer to the SRS to ensure that the actual implementation aligns seamlessly with the specified requirements.
 
 ### 1.4 Product Scope
-* The reviewers section would contain a login page.
-* After logging in it would would lead to a homepage for the reviwers that would display the papers assigned to them.
-* The reviewers will be able to see all the papers assigned to them in a row wise fashion.
-* They can then review the papers , edit/submit the reviews. 
+* User Authentication:
+    * A secure login page for reviewers to access the system.
+* Reviewer Dashboard:
+    * Upon logging in, reviewers are directed to a personalized homepage, presenting a comprehensive overview of papers assigned to them.
+* Paper Presentation:
+    * The system organizes assigned papers in a clear and systematic row-wise fashion for easy navigation.
+* Reviewing Functionality:
+    * Reviewers have the capability to thoroughly evaluate papers, with options to edit and submit reviews seamlessly.
+These features collectively form the product scope, ensuring an efficient and user-friendly platform for the review process.
 
 ### 1.5 References 
-https://www.springer.com/gp/computer-science/lncs/online-conference-service
-https://support.springer.com/en/support/solutions/articles/6000245514-description-of-the-end-to-end-process-in-equinocs
+Refer to the following links for additional resources:
+* https://www.springer.com/gp/computer-science/lncs/online-conference-service
+* https://support.springer.com/en/support/solutions/articles/6000245514-description-of-the-end-to-end-process-in-equinocs
 
 ## Overall Description
 ### 2.1 Product Overview
