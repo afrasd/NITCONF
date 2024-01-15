@@ -170,23 +170,15 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
 ### 2.7 Assumptions and Dependencies
 ## Assumptions:
-# Third-Party Components:
-Assuming the availability and reliability of third-party libraries or frameworks used in the development of the website.
-# Internet Connectivity: 
-Assuming that users and reviewers have consistent internet access for seamless interaction with the platform.
-# Browser Compatibility:
-Assuming standard browser compatibility for optimal user experience.
-# User Cooperation:
-Assuming users will follow proper guidelines for paper submissions and reviews.
+- **Third-Party Components**:Assuming the availability and reliability of third-party libraries or frameworks used in the development of the website.
+- **Internet Connectivity**:Assuming that users and reviewers have consistent internet access for seamless interaction with the platform.
+- **Browser Compatibility**:Assuming standard browser compatibility for optimal user experience.
+- **User Cooperation**:Assuming users will follow proper guidelines for paper submissions and reviews.
 ## Dependencies:
-# External APIs: 
-Dependency on external APIs for features like user authentication or data retrieval.
-# Database System: 
-Dependency on the chosen database system for storing and retrieving paper and user data.
-# Hosting Service:
-Dependency on a reliable hosting service for the website to be accessible online.
-# Development Tools: 
-Dependency on specific development tools, languages, or frameworks.
+- **External APIs**:Dependency on external APIs for features like user authentication or data retrieval.
+- **Database System**:Dependency on the chosen database system for storing and retrieving paper and user data.
+- **Hosting Service**:Dependency on a reliable hosting service for the website to be accessible online.
+- **Development Tools**:Dependency on specific development tools, languages, or frameworks.
 ## External Interface Requirements
 ### 3.1 User Interfaces
 Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
