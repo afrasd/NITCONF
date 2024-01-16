@@ -136,13 +136,13 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 -Security Protocols: Utilizes HTTPS for secure communication over the internet.
 
 **Software Dependencies**
--Spring Framework: The specific version of the Spring Framework used in development.
+-Spring Framework
 -Database: Compatible with relational databases like MySQL, MySQL workbench, PostgreSQL, or similar, depending on the application's data persistence requirements.
--Frontend Technologies: Might include HTML5, CSS3, JavaScript.
+-Frontend Technologies: Includes HTML5, CSS3, JavaScript.
 
 **Deployment Environment**
 Containerization: The application is containerized using Docker, Kubernetes.
-API testing tools: POstman, swagger.io, SoapUI.
+API testing tools: Postman, swagger.io, SoapUI.
 CI/CD Pipelines: Integration with continuous integration and continuous deployment tools.
 
 
