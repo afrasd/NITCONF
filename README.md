@@ -14,12 +14,11 @@ Table of Contents
     * 1.5 [References](#15-references)
   * [Overall Description](#overall-description)
     * 2.1 [Product Overview](#21-product-overview)
-    * 2.2 [Product Functions](#22-product-functions)
-    * 2.3 [User Classes and Characteristics](#23-user-classes-and-characteristics)
-    * 2.4 [Operating Environment](#24-operating-environment)
-    * 2.5 [Design and Implementation Constraints](#25-design-and-implementation-constraints)
-    * 2.6 [User Documentation](#26-user-documentation)
-    * 2.7 [Assumptions and Dependencies](#27-assumptions-and-dependencies)
+    * 2.2 [User Classes and Characteristics](#23-user-classes-and-characteristics)
+    * 2.3 [Operating Environment](#24-operating-environment)
+    * 2.4 [Design and Implementation Constraints](#25-design-and-implementation-constraints)
+    * 2.5 [User Documentation](#26-user-documentation)
+    * 2.6 [Assumptions and Dependencies](#27-assumptions-and-dependencies)
   * [External Interface Requirements](#external-interface-requirements)
     * 3.1 [User Interfaces](#31-user-interfaces)
     * 3.2 [Hardware Interfaces](#32-hardware-interfaces)
@@ -85,15 +84,18 @@ Refer to the following links for additional resources:
 
 ## Overall Description
 ### 2.1 Product Overview
-The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme CommitteeThe Reveiwers would be provided with a login page where they can login with their credentials. They will be 2 sections under it
-1. To Review
+The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme Committee. The Reveiwers would be provided with a login page where they can login with their credentials. There will be 3 sections under it
+1. To Review  
 All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
 2. Reviewed
 The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
 3. History
 The history tab will show all the papers reviewed by that reviewer so far with the status and date.
 
-![WhatsApp Image 2024-01-14 at 19 12 50](https://github.com/afrasd/NITCONF/assets/103187343/a0237b0e-9210-4adf-a5b9-446fcbd41d2e)
+
+![Untitled Diagram](https://github.com/afrasd/NITCONF/assets/103187343/3164e190-4855-4836-918f-64d472f029a0)
+
+
 
 ### 2.2 User Classes and Characteristics
 **User - Reviewer**
@@ -168,10 +170,11 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 - **Layout**: Displays assigned papers in a row-wise manner.
 - **Columns**:
   1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
-  2. **Paper Title and Actions**: Shows the paper's title with 'Review' and 'Display All' options. 'Review' opens a pop-up for rating, commenting, and final actions ('Accept', 'Reject', or 'Revise'). 'Display All' reveals all previous comments/reviews.
-  3. **Status**: Indicates the current status of the paper (Accept/Reject).
+  2. **Paper Title and Actions**: Shows the paper's title with 'Review' and 'Display All Reviews' options. 'Review' opens a pop-up for rating, commenting, and final actions ('Accept', 'Reject', or 'Revise'). 'Display All Reviews' reveals all previous comments/reviews.
+  3. **Status**: Indicates the current status of the paper (Accept/Reject/Pending).
   4. **Revision**: Shows the revision round of the paper (e.g., first, second).
   5. **Deadline**: Lists the review deadline set by the Program Committee.
+  6. **Decline**: A button that can be pressed if the reviewer chooses not to review that paper.
 
 ### 'Reviewed' Page
 - **Content**: Lists all reviewed papers.
@@ -187,6 +190,10 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
   1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
   2. **Paper Title and Edit Options**: Displays the paper's title with a 'Display All' button.
   3. **Status**: The final status of the paper (Accept/Reject).
+
+### 'Notifications' Page
+- **Content**: Lists all notifications from PC, like paper assignments and deadline reminders.
+  
   
 ### 2.6 Assumptions and Dependencies
 ## Assumptions:
