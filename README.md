@@ -59,7 +59,7 @@ The document is intended to serve several groups of audience members :
 * System Designer:
     * They are the primary audience. It provides crucial information guiding the design phase.
 * Program Committee:
-    * They are expected us to provide the reuired resources mentioned in the SRS Document.
+    * They are expected us to provide the required resources mentioned in the SRS Document.
 * Author:
     * They are expected to upload the Document/ Thesis in the specified format.
 * Tester:
@@ -111,6 +111,8 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 - deadline tracking and submission status.
 	- a visible and clear display of the deadline for each paper to support timely reviews and submission along with reminders and notifications.
 	- real time status updation once the reviewer has submitted his review.
+- decline to review.
+ 	- this option would be provided to the reviewer if they wish to decline to give a review.
 - edit and resubmit capabilities available for reviewers.
 - confidentiality and anonymity between reviewers and the authors of the paper by enforcing a double blind situation.
 
@@ -167,7 +169,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 ### 'To Review' Page
 - **Layout**: Displays assigned papers in a row-wise manner.
 - **Columns**:
-  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  1. **Pdf id and Downloads**: Includes a pdf id, 'Abstract' and 'PDF Download' buttons.
   2. **Paper Title and Actions**: Shows the paper's title with 'Review' and 'Display All Reviews' options. 'Review' opens a pop-up for rating, commenting, and final actions ('Accept', 'Reject', or 'Revise'). 'Display All Reviews' reveals all previous comments/reviews.
   3. **Status**: Indicates the current status of the paper (Accept/Reject/Pending).
   4. **Revision**: Shows the revision round of the paper (e.g., first, second).
@@ -177,7 +179,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 ### 'Reviewed' Page
 - **Content**: Lists all reviewed papers.
 - **Columns**:
-  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  1. **Pdf id and Downloads**: Includes a pdf id, 'Abstract' and 'PDF Download' buttons.
   2. **Paper Title and Edit Options**: Displays the paper's title with 'Edit' and 'Display All Reviews' buttons. 'Edit' allows modification of the most recent review. 'Display All' shows all past reviews.
   3. **Status**: The final status of the paper (Accept/Reject).
   4. **Deadline**: The review deadline, after which the paper is removed from this page.
@@ -185,7 +187,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 ### 'View History' Page
 - **Content**: Lists all reviewed papers in the last 6 months.
 - **Columns**:
-  1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
+  1. **Pdf id and Downloads**: Includes a paper pdf id, 'Abstract' and 'PDF Download' buttons.
   2. **Paper Title and Edit Options**: Displays the paper's title with a 'Display All Reviews' button.
   3. **Status**: The final status of the paper (Accept/Reject).
 
