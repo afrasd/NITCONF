@@ -5,7 +5,6 @@ NITCONF is a conference website designed to facilitate paper submissions for eva
 
 Table of Contents
 =================
-  * [Revision History](#revision-history)
   * [Introduction](#1-introduction)
     * 1.1 [Purpose](#11-purpose)
     * 1.2 [Document Conventions](#12-document-conventions)
@@ -89,8 +88,9 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
 2. Reviewed
 The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
-3. History
+4. History
 The history tab will show all the papers reviewed by that reviewer so far with the status and date.
+
 
 
 ![Untitled Diagram](https://github.com/afrasd/NITCONF/assets/103187343/3164e190-4855-4836-918f-64d472f029a0)
