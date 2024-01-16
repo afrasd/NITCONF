@@ -84,12 +84,10 @@ Refer to the following links for additional resources:
 ## Overall Description
 ### 2.1 Product Overview
 The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme Committee. The Reveiwers would be provided with a login page where they can login with their credentials. There will be 3 sections under it
-1. To Review  
-All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
-2. Reviewed
-The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
-4. History
-The history tab will show all the papers reviewed by that reviewer so far with the status and date.
+1. To Review  - All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
+2. Reviewed - The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
+3. History - The history tab will show all the papers reviewed by that reviewer so far with the status and date.
+4. Notifications - All notifications from the PC would be here.
 
 
 
@@ -180,7 +178,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 - **Content**: Lists all reviewed papers.
 - **Columns**:
   1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
-  2. **Paper Title and Edit Options**: Displays the paper's title with 'Edit' and 'Display All' buttons. 'Edit' allows modification of the most recent review. 'Display All' shows all past reviews.
+  2. **Paper Title and Edit Options**: Displays the paper's title with 'Edit' and 'Display All Reviews' buttons. 'Edit' allows modification of the most recent review. 'Display All' shows all past reviews.
   3. **Status**: The final status of the paper (Accept/Reject).
   4. **Deadline**: The review deadline, after which the paper is removed from this page.
   
@@ -188,7 +186,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 - **Content**: Lists all reviewed papers in the last 6 months.
 - **Columns**:
   1. **Thumbnail and Downloads**: Includes a paper thumbnail, 'Abstract' and 'PDF Download' buttons.
-  2. **Paper Title and Edit Options**: Displays the paper's title with a 'Display All' button.
+  2. **Paper Title and Edit Options**: Displays the paper's title with a 'Display All Reviews' button.
   3. **Status**: The final status of the paper (Accept/Reject).
 
 ### 'Notifications' Page
