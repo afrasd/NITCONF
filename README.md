@@ -91,7 +91,8 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 
 
 
-![Untitled Diagram](https://github.com/afrasd/NITCONF/assets/103187343/3164e190-4855-4836-918f-64d472f029a0)
+![diag1](https://github.com/afrasd/NITCONF/assets/103187343/e5eede35-4fd2-43b8-9ed8-cf68f1771bb0)
+
 
 
 
