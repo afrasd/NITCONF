@@ -158,7 +158,7 @@ CI/CD Pipelines: Integration with continuous integration and continuous deployme
 #### Login and Dashboard Navigation
 - **Login**: Reviewers log in with their credentials and are directed to the reviewer dashboard.
 - **Profile**: The user's profile icon is displayed in the top right corner, linking to the profile page.
-- **Side Navigation Bar**: Features a collapsible navigation with the following options:
+- **homepage**: contains links/buttons to the following options:
   - **To Review**: A list of papers assigned for review.
   - **Reviewed**: Papers that have been reviewed by the user.
   - **View History**: A history of papers reviewed in the past 6 months.
