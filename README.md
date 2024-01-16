@@ -99,7 +99,7 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 **User - Reviewer**
 - **Frequency of use**: Reviewers engage with the system intensively during the conference periods.
 - **Functions used**: 
-	- **paper review**: reviewers will be able to give the review based on some metrics such as originality, relevance, quality, readability, technical soundness etc, additionally they would be able to give a confidence rating. finally they can accept/reject the paper or click on another option called review. After finalizing the changes they can submit the review to the PC. 
+	- **paper review**: reviewers will be able to give the review based on some metrics such as originality, relevance, quality, readability, technical soundness etc, additionally they would be able to give a confidence rating. finally they can accept/reject the paper or click on another option called revise. After finalizing the changes they can submit the review to the PC. 
 	- **Commenting and Feedback**: They provide detailed comments and feedback for each paper, which may include critiques, suggestions for improvement, and overall assessments.
 - **Technical Expertise**: A simple understanding of basic computer based tasks is enough to navigate the system as it is user friendly.
 - ** Security Levels**: Reviewers require secure login credentials to login in to the system, this is done to ensure the integrity and confidentiality of the reviewing process.
