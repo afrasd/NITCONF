@@ -83,8 +83,8 @@ Refer to the following links for additional resources:
 
 ## Overall Description
 ### 2.1 Product Overview
-The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme Committee. The Reveiwers would be provided with a login page where they can login with their credentials. There will be 3 sections under it
-1. To Review  - All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these papers will go to the Reviewed session.
+The reviewers page in NITCONF will serve as an interface for the reviewers to mark their review, add comments, feedbacks and ratings to the papers assigned to them by the Programme Committee. The Reveiwers would be provided with a login page where they can login with their credentials. Additionally the reviewer will have tags indicating the reviewer's area of expertise and interest, these tags would be matched with the tags that the author had mentioned or selected while submitting their paper, based on the similarity of the tags PC members would assign the papers to the corresponding reviewers. There will be 3 sections under it:
+1. To Review  - All the papers that has to be reviewed and submitted to PC would be displayed here along with the deadline. After submission, these  papers will go to the Reviewed session.
 2. Reviewed - The papers submitted to PC would be displayed along with the deadlines. The reviewer has the option to edit it and resubmit before the deadline. After deadline these papers will go to history.
 3. History - The history tab will show all the papers reviewed by that reviewer so far with the status and date.
 4. Notifications - All notifications from the PC would be here.
