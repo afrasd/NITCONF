@@ -106,16 +106,7 @@ The reviewers page in NITCONF will serve as an interface for the reviewers to ma
 - ** Security Levels**: Reviewers require secure login credentials to login in to the system, this is done to ensure the integrity and confidentiality of the reviewing process.
 - **Educational Level and Experience**: They possess significant expertise in their respective academic or industry fields. They must also have experience in the reviewing process which would enable them to critique better and provide some insightful comments.
 
-**Pertinent Requirements**
-- easy access to assigned papers because of the user friendly UI.
-	- divided into two sections : to review and review
-- deadline tracking and submission status.
-	- a visible and clear display of the deadline for each paper to support timely reviews and submission along with reminders and notifications.
-	- real time status updation once the reviewer has submitted his review.
-- decline to review.
- 	- this option would be provided to the reviewer if they wish to decline to give a review.
-- edit and resubmit capabilities available for reviewers.
-- confidentiality and anonymity between reviewers and the authors of the paper by enforcing a double blind situation.
+
 
 ### 2.3 Operating Environment
 **General requirements**: NITCONF designed to be lightweight and accessible on platforms such as desktop computers and laptops.
