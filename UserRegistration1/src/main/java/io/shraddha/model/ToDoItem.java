@@ -82,17 +82,17 @@ public class ToDoItem implements Serializable {
         return decline;
     }	
 
-    public void setDecline(int i) {
+    public void setDecline(String decline) {
         this.decline = decline;
     }
 
     public void updateDeclineStatus(Long id) {
-        Optional<ToDoItem> optionalToDoItem = ToDoItemService.getById(id);
+       Optional<ToDoItem> optionalToDoItem = ToDoItemService.getId(id);
         if (optionalToDoItem.isPresent()) {
             ToDoItem toDoItem = optionalToDoItem.get();
 
             // Set the decline attribute to 0
-            toDoItem.setDecline(0);
+            toDoItem.getDecline();
 
             ToDoItemService toDoItemService = new ToDoItemService();
 			// Save the updated ToDoItem back to the database

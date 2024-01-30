@@ -63,17 +63,31 @@ public class ToDoFormController {
         return "history";
     }
     
+//    @PostMapping("/update-review")
+//    public String updateReview(@RequestParam("action") String action,
+//                               @RequestParam("id") Long id) {
+//        // Print the corresponding PDF ID when Submit is clicked
+//        System.out.println("PDF ID: " + id);
+//
+//        // Assuming you have a service method to update the status based on the action
+//        toReviewItemService.updateStatus(action, Collections.singletonList(id));
+//
+//        return "redirect:/toreview"; // Redirect back to the to-review page
+//    }
+//  
     @PostMapping("/update-review")
     public String updateReview(@RequestParam("action") String action,
                                @RequestParam("id") Long id) {
-        // Print the corresponding PDF ID when Submit is clicked
-        System.out.println("PDF ID: " + id);
-
         // Assuming you have a service method to update the status based on the action
         toReviewItemService.updateStatus(action, Collections.singletonList(id));
 
+        // Get the corresponding PDF ID
+        Optional<ToDoItem> optionalToDoItem = toReviewItemService.getById(id);
+        String pdfId = optionalToDoItem.map(ToDoItem::getPdfId).orElse("PDF ID not found");
+
+        // Print the PDF ID (you can modify this based on your logging needs)
+        System.out.println("PDF ID: " + pdfId);
+
         return "redirect:/toreview"; // Redirect back to the to-review page
     }
-  
-
     }

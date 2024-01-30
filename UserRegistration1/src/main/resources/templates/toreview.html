@@ -1,5 +1,6 @@
 <form th:action="@{/toreview/update-review}" method="post">
     <table class="table table-bordered table-striped">
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
         <thead>
         <tr>
             <th>PDF ID</th>
@@ -26,15 +27,16 @@
                     <input type="hidden" name="status" th:value="${item.status}" />
                     <input type="hidden" name="revision" th:value="${item.revision}" />
                     <input type="hidden" name="deadline" th:value="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}" />
-                    <button type="submit" class="btn btn-info" name="action" th:value="'Submit'">
+                    <button type="submit" class="btn btn-info" name="action" value="Submit">
                         <i class="bi bi-pencil-fill"></i> Submit
                     </button>
-                    <button type="submit" class="btn btn-danger" name="action" th:value="'Decline'">
+                    <button type="submit" class="btn btn-danger" name="action" value="Decline">
                         <i class="bi bi-trash-fill"></i> Decline
                     </button>
                 </div>
             </td>
         </tr>
+        <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
         </tbody>
     </table>
 </form>

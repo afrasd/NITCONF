@@ -37,11 +37,11 @@ public class HomeController {
 	        List<ToDoItem> toReviewItems = toReviewItemService.getAll();
 	        System.out.println("Number of items: " + toReviewItems.size()); // Add this line for debugging
 	        model.addAttribute("toReviewItems", toReviewItems);
-	        //return "toreview"; // Assuming you want to view the items in the same "toreview.html"
+	        return "toreview"; // Assuming you want to view the items in the same "toreview.html"
 	    
 //    	model.addAttribute("toreviewItem", new ToDoItem());
-    	//return "new-todo-item"; // Assuming "new-todo-item.html" is the correct Thymeleaf template
-    	return "toreview";
+//    	return "new-todo-item"; // Assuming "new-todo-item.html" is the correct Thymeleaf template
+//    	return "toreview";
     }
     @PostMapping("/toreview")
     public String createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
