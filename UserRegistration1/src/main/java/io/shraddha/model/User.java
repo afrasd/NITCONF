@@ -11,7 +11,6 @@ public class User
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer user_id;
-	
 	private String user_fname;
 	private String user_lname;
 	private String user_email;

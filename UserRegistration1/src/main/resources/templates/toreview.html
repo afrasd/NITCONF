@@ -1,0 +1,40 @@
+<form th:action="@{/toreview/update-review}" method="post">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>PDF ID</th>
+            <th>Paper Title / Paper ID</th>
+            <th>Status</th>
+            <th>Revision Status</th>
+            <th>Deadline</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item, itemStat : ${toReviewItems}">
+            <td th:text="${item.pdfId}"></td>
+            <td>
+                <span th:text="${item.title}"></span>
+            </td>
+            <td th:text="${item.status}" th:class="${item.status == 'accept' ? 'text-success' : (item.status == 'reject' ? 'text-danger' : 'text-warning')}"></td>
+            <td th:text="${item.revision}"></td>
+            <td th:text="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}"></td>
+            <td>
+                <div class="btn btn-group-sm" role="group">
+                    <input type="hidden" name="id" th:value="${item.id}" />
+                    <input type="hidden" name="title" th:value="${item.title}" />
+                    <input type="hidden" name="status" th:value="${item.status}" />
+                    <input type="hidden" name="revision" th:value="${item.revision}" />
+                    <input type="hidden" name="deadline" th:value="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}" />
+                    <button type="submit" class="btn btn-info" name="action" th:value="'Submit'">
+                        <i class="bi bi-pencil-fill"></i> Submit
+                    </button>
+                    <button type="submit" class="btn btn-danger" name="action" th:value="'Decline'">
+                        <i class="bi bi-trash-fill"></i> Decline
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
