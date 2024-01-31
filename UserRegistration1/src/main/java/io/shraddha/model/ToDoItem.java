@@ -2,15 +2,12 @@ package io.shraddha.model;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import io.shraddha.service.ToDoItemService;
 
 @Entity
 @Table(name = "to_review")
@@ -27,10 +24,17 @@ public class ToDoItem implements Serializable {
     private String paperstatus;
     private String revision;
     private Date deadline;
-    private String decline; 
-
-
-
+    private int submitted;
+    
+    
+    public int getSubmitted() {
+    	return this.submitted;
+    }
+    
+    public void setSubmited(int submitted) {
+    	this.submitted = submitted;
+    }
+    
     public Long getId() {
         return this.id;
     }
@@ -78,59 +82,10 @@ public class ToDoItem implements Serializable {
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
-    public String getDecline() {
-        return decline;
-    }	
-
-    public void setDecline(String decline) {
-        this.decline = decline;
-    }
-
-    public void updateDeclineStatus(Long id) {
-       Optional<ToDoItem> optionalToDoItem = ToDoItemService.getId(id);
-        if (optionalToDoItem.isPresent()) {
-            ToDoItem toDoItem = optionalToDoItem.get();
-
-            // Set the decline attribute to 0
-            toDoItem.getDecline();
-
-            ToDoItemService toDoItemService = new ToDoItemService();
-			// Save the updated ToDoItem back to the database
-            toDoItemService.save(toDoItem);
-        }
-    }
 
     @Override
     public String toString() {
-        return String.format("ToReview{id=%d, pdfId='%s', title='%s', status='%s', revision='%s', deadline='%s'}",
-                id, pdfId, title, paperstatus, revision, deadline);
+        return String.format("ToReview{id=%d, pdfId='%s', title='%s', status='%s', revision='%s', deadline='%s', submitted=%d}",
+                id, pdfId, title, paperstatus, revision, deadline,submitted);
     }
 }
-//package io.shraddha.model;
-//
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
-//
-//@Entity
-//@Table(name = "to_review")
-//public class ToDoItem {
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-//
-//    // Add other fields as needed, for example:
-//    private String pdfId;
-//    private String title;
-//	  public String getPdfId() {
-//	  return pdfId;
-//	}
-//    public String getTitle() {
-//    return title;
-//}
-//    // Getters and setters
-//    // ...
-//}

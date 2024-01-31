@@ -75,7 +75,7 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.26</version> <!-- Use the version that matches your MySQL server version -->
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
@@ -87,7 +87,6 @@
 			<artifactId>bootstrap-icons</artifactId>
 			<version>1.10.2</version>
 		</dependency>
-
 </dependencies>
 
 	<build>

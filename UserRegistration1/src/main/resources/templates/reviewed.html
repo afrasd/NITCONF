@@ -1,4 +1,4 @@
-  <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
@@ -50,14 +50,15 @@
 </head>
 <body>
 <div class="container">
-	<div class="navbar">
-		<a href="/dummy">Home</a>
+    <div class="navbar">
+        <a href="/dummy">Home</a>
         <a href="/toreview">To Review</a>
         <a href="/reviewed">Reviewed</a>
         <a href="/history">History</a>
         <a href="#">Notification</a>
     </div>
-    <h1>History</h1>
+
+    <h1>Reviewed PDF's</h1>
     <hr />
 
     <table class="table table-bordered table-striped">
@@ -68,10 +69,11 @@
             <th>Status</th>
             <th>Revision Status</th>
             <th>Deadline</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="item : ${expiredItems}">
+        <tr th:each="item : ${reviewedItems}">
             <td th:text="${item.pdfId}"></td>
             <td>
                 <div class="btn btn-group-sm" role="group">
@@ -84,6 +86,12 @@
 
             <td th:text="${item.revision}"></td>
             <td th:text="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}"></td>
+            <td>
+                <div class="btn btn-group-sm" role="group">
+                    <a class="btn btn-info" th:href="@{/form}">
+                        <i class="bi bi-pencil-fill"></i> Edit</a>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -95,4 +103,3 @@
 <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
 </body>
 </html>
-  

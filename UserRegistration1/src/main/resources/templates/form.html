@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <p><a class="btn btn-outline-success" href="/">
+                <i class="bi bi-arrow-left-square-fill"></i> Back</a>
+            </p>
+        </div>
+        <div class="col-6">
+            <h2>Form Page!</h2>
+            
+            <form action="#" th:action="@{/form}" th:object="${formItem}" method="POST">
+                <div class="form-group">
+                    <label for="confidence">Confidence</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{confidence}"
+                           id="confidence"
+                           placeholder="Confidence"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="relevance">Relevance</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{relevance}"
+                           id="relevance"
+                           placeholder="Relevance"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="originality">Originality</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{originality}"
+                           id="originality"
+                           placeholder="Originality"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="significance">Significance</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{significance}"
+                           id="significance"
+                           placeholder="Significance"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="techsound">Tech Soundness</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{techsound}"
+                           id="techsound"
+                           placeholder="Tech Soundness"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="vocabulary">Vocabulary</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{vocabulary}"
+                           id="vocabulary"
+                           placeholder="Vocabulary"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="quality">Quality</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{quality}"
+                           id="quality"
+                           placeholder="Quality"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="readability">Readability</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{readability}"
+                           id="readability"
+                           placeholder="Readability"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="commentval">Comment</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{commentval}"
+                           id="commentval"
+                           placeholder="Comment"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="bi bi-plus-square-fill"></i> Add To Review
+                </button>
+
+
+            </form>
+            <!-- Display existing form data -->
+            <div th:if="${existingToDoItem != null}">
+                <h3>Existing Form Data:</h3>
+                <!-- Display existing ToDoItem properties... -->
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -14,15 +14,8 @@ import java.util.Date;
 
 @SuppressWarnings("unused")
 @Repository
-public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
-	ToDoItem findByPdfId(String pdfId);
-	List<ToDoItem> findBySubmitted(int submitted);
-
-	 @Query("SELECT t FROM ToDoItem t WHERE t.deadline < :currentDate")
-	    List<ToDoItem> findExpiredItems(@Param("currentDate") Date currentDate);
-    
-//    List<ToDoItem> findByDeadlineBefore(Date currentDate);
-    
+public interface ToAddFormRepository extends JpaRepository<PutFormData, Long>{
+   
 }
 
 
