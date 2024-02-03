@@ -12,21 +12,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import io.shraddha.model.User;
 import io.shraddha.repo.UserRepository;
 
 @JavaBean
-@Controller
+@RestController
+@RequestMapping("/api/toreview")
 public class UserController {
 
     @Autowired
     UserRepository urepo;
 
     @RequestMapping("/")
-    public String home() {
-        return "home";
+    public ModelAndView home() {
+        return new ModelAndView("home");
     }
 
     @RequestMapping("/signup")
@@ -35,8 +37,8 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String getLogin() {
-        return "loginpage";
+    public ModelAndView getLogin() {
+        return new ModelAndView("loginpage");
     }
 
     @PostMapping("/addUser")
@@ -55,9 +57,13 @@ public class UserController {
         return mv;
     }
 
+    @PostMapping("/dummy")
+    public ModelAndView dummy(ModelMap model) {
+        return new ModelAndView("dummy");
+    }
     @GetMapping("/dummy")
-    public String dummy(ModelMap model) {
-        return "dummy";
+    public ModelAndView dummy1(ModelMap model) {
+        return new ModelAndView("dummy");
     }
     
 //    @RequestMapping("/toreview")
@@ -66,7 +72,7 @@ public class UserController {
 //    }
 
     @PostMapping("/login")
-    public String login_user(@RequestParam("username") String username, @RequestParam("password") String password,
+    public ModelAndView login_user(@RequestParam("username") String username, @RequestParam("password") String password,
             HttpSession session, ModelMap modelMap) {
 
         User auser = urepo.findByUsernamePassword(username, password);
@@ -77,23 +83,23 @@ public class UserController {
 
             if (username.equalsIgnoreCase(uname) && password.equalsIgnoreCase(upass)) {
                 session.setAttribute("username", username);
-                return "redirect:/dummy";
+                return new ModelAndView ("api/toreview/dummy");
             } else {
                 modelMap.put("error", "Invalid Account");
-                return "loginpage";
+                return new ModelAndView("loginpage");
             }
         } else {
             modelMap.put("error", "Invalid Account");
-            return "loginpage";
+            return new ModelAndView("loginpage");
         }
 
     }
 
     @GetMapping(value = "/logout")
-    public String logout_user(HttpSession session) {
+    public ModelAndView logout_user(HttpSession session) {
         session.removeAttribute("username");
         session.invalidate();
-        return "redirect:/login";
+        return new ModelAndView ("api/oreview/login");
     }
     
 //    @GetMapping("/toreview")

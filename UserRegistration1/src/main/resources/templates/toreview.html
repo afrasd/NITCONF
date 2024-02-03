@@ -51,10 +51,10 @@
 <body>
 <div class="container">
     	<div class="navbar">
-		<a href="/dummy">Home</a>
-        <a href="/toreview">To Review</a>
-        <a href="/reviewed">Reviewed</a>
-        <a href="/history">History</a>
+		<a href="dummy">Home</a>
+        <a href="toreview">To Review</a>
+        <a href="reviewed">Reviewed</a>
+        <a href="history">History</a>
         <a href="#">Notification</a>
     </div>
 
@@ -88,11 +88,11 @@
             <td th:text="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}"></td>
             <td>
                 <div class="btn btn-group-sm" role="group">
-                    <a class="btn btn-info" th:href="@{/submit(pdfId=${item.pdfId})}">
+                    <a class="btn btn-info" th:href="@{submit(pdfId=${item.pdfId})}">
                         <i class="bi bi-pencil-fill"></i> Submit</a>
-                    <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
+                    <a class="btn btn-danger" th:href="@{(delete=${item.id})}">
                         <i class="bi bi-trash-fill"></i> Decline</a>
-                    <a class="btn btn-success" th:href="@{/form}">
+                    <a class="btn btn-success" th:href="@{form}">
                         <i class="bi bi-plus-square-fill"></i> To Review</a>
                 </div>
             </td>
