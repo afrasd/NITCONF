@@ -1,13 +1,5 @@
 package io.shraddha.config;
 
-//public class CorsConfig {
-//
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//	}
-//
-//}
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

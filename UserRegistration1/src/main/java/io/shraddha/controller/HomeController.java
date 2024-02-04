@@ -59,6 +59,7 @@ public class HomeController {
 	    }
 	    
 	 // here were rendering it as a html view and not getting a json response, json repsonse makes it easier for integration with react js
+	 //need to modify all instances of the api integration so that they return valid json responses for integration with react.js
 	 
 	    // Code snippet to fetch data from the database
 //	    @GetMapping("/reviewed")
