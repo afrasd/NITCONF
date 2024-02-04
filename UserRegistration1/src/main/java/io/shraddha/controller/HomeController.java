@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,9 +25,12 @@ import io.shraddha.repo.ToAddFormRepository;
 import io.shraddha.repo.ToDoItemRepository;
 import java.util.Date;
 
-
+@CrossOrigin(origins = "http://localhost:3001")
 @RestController
 @RequestMapping("/api/toreview")
+//@RestController
+//@RequestMapping("/api/toreview")
+//@CrossOrigin(origins = "http://localhost:3001") // Allow requests from the React app
 public class HomeController {
 
 	 @Autowired
@@ -51,25 +55,38 @@ public class HomeController {
 
 	        // Create and return a ModelAndView with the view name
 	        return new ModelAndView("history");
+	        
 	    }
 	    
+	 // here were rendering it as a html view and not getting a json response, json repsonse makes it easier for integration with react js
+	 //need to modify all instances of the api integration so that they return valid json responses for integration with react.js
+	 
 	    // Code snippet to fetch data from the database
-	    @GetMapping("/reviewed")
-	    public ModelAndView viewReviewedItems(Model model) {
-	        List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
-	        System.out.println("Number of reviewed items: " + reviewedItems.size());
-	        model.addAttribute("reviewedItems", reviewedItems);
-	        return new  ModelAndView("reviewed"); // Assuming "reviewed.html" is the view file for displaying reviewed items
-	    }
-//		  
+//	    @GetMapping("/reviewed")
+//	    public ModelAndView viewReviewedItems(Model model) {
+//	        List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
+//	        System.out.println("Number of reviewed items: " + reviewedItems.size());
+//	        model.addAttribute("reviewedItems", reviewedItems);
+//	        return new  ModelAndView("reviewed"); // Assuming "reviewed.html" is the view file for displaying reviewed items
+//	    }
+//		
+	 @GetMapping("/reviewed")
+	 public ResponseEntity<List<ToDoItem>> viewReviewedItems() {
+	     List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
+	     System.out.println("Number of reviewed items: " + reviewedItems.size());
+	     return ResponseEntity.ok(reviewedItems);
+	 }
 	    @GetMapping("/toreview")
+	    @CrossOrigin(origins = "http://localhost:3001/toreview")
 	    public ModelAndView viewToReviewItems(Model model) {
 	        List<ToDoItem> toReviewItems = toReviewItemService.getToReviewItemsWithSubmittedZero();
 	        System.out.println("Number of items with submitted 0: " + toReviewItems.size());
 	        model.addAttribute("toReviewItems", toReviewItems);
 	        return new ModelAndView ("toreview");
 	    }
+	    //@CrossOrigin(origins = "http://localhost:3001/toreview")
 	    @PostMapping("/toreview")
+	    @CrossOrigin(origins = "http://localhost:3001/toreview")
 	    public ModelAndView createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
 	        if (result.hasErrors()) {
 	            return new ModelAndView("toreview");
