@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.query.Param;
 import io.shraddha.model.ToDoItem;
 import io.shraddha.model.PutFormData;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.repository.Modifying;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,7 +24,10 @@ public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
 	    List<ToDoItem> findExpiredItems(@Param("currentDate") Date currentDate);
     
 //    List<ToDoItem> findByDeadlineBefore(Date currentDate);
-    
+		@Transactional
+		@Modifying
+	    @Query("DELETE FROM ToDoItem p WHERE p.pdfId = :pdfId")
+	    void deleteByPdfId(@Param("pdfId") String pdfId); 
 }
 
 

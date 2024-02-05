@@ -94,49 +94,43 @@
         <a href="#" onclick="openModal()">Notification</a>
     </div>
 
-    <h1>To Review!</h1>
+    <h1>Form Comments!</h1>
     <hr />
 
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
             <th>PDF ID</th>
-            <th>Paper Title / Paper ID</th>
-            <th>Status</th>
-            <th>Revision Status</th>
-            <th>Deadline</th>
-            <th>Action</th>
+            <th>Confidence</th>
+            <th>Relevance</th>
+            <th>Originality</th>
+            <th>Significance</th>
+            <th>Tech Soundness</th>
+            <th>Vocabulary</th>
+            <th>Quality</th>
+            <th>Readability</th>
+            <th>Comment</th>
         </tr>
         </thead>
-        <tbody>
-        <tr th:each="item : ${toReviewItems}">
-            <td th:text="${item.pdfId}"></td>
-            <td>
-                <div class="btn btn-group-sm" role="group">
-                    <a class="btn btn-primary" th:href="@{/api/v1.0/display-all(pdfId=${item.pdfId})}">
-                        <i class="bi bi-list"></i> Display All</a>
-                </div>
-                <span th:text="${item.title}"></span>
-            </td>
-            <td th:text="${item.status}" th:class="${item.status == 'accept' ? 'text-success' : (item.status == 'reject' ? 'text-danger' : 'text-warning')}"></td>
-            <td th:text="${item.revision}"></td>
-            <td th:text="${#dates.format(item.deadline, 'yyyy-MM-dd HH:mm')}"></td>
-            <td>
-                <div class="btn btn-group-sm" role="group">
-                    <a class="btn btn-info" th:href="@{/api/v1.0/submit(pdfId=${item.pdfId})}">
-                        <i class="bi bi-pencil-fill"></i> Submit</a>
-                    <a class="btn btn-danger" th:href="@{/api/v1.0/delete(pdfId=${item.pdfId})}">
-                        <i class="bi bi-trash-fill"></i> Decline</a>
-                    <a class="btn btn-success" th:href="@{/api/v1.0/form(pdfId=${item.pdfId})}">
-                        <i class="bi bi-plus-square-fill"></i> To Review</a>
-                </div>
-            </td>
-        </tr>
-        </tbody>
+<tbody>
+    <tr th:each="item : ${formDataList}">
+        <td th:text="${item.pdfId}"></td>
+        <td th:text="${item.confidence}"></td>
+        <td th:text="${item.relevance}"></td>
+        <td th:text="${item.originality}"></td>
+        <td th:text="${item.significance}"></td>
+        <td th:text="${item.techsound}"></td>
+        <td th:text="${item.vocabulary}"></td>
+        <td th:text="${item.quality}"></td>
+        <td th:text="${item.readability}"></td>
+        <td th:text="${item.commentval}"></td>
+    </tr>
+</tbody>
+
     </table>
 
-    <p><a class="btn btn-outline-success" href="/api/v1.0/create-to-review">
-       <i class="bi bi-plus-square-fill"></i> Create a To Review Item</a>
+    <p><a class="btn btn-outline-success" href="/api/v1.0/toreview">
+       <i class="bi bi-plus-square-fill"></i> Back</a>
     </p>
 </div>
 

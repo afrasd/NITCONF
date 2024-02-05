@@ -10,14 +10,14 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-2">
-            <p><a class="btn btn-outline-success" href="/api/toreview/toreview">
+            <p><a class="btn btn-outline-success" href="/api/v1.0/toreview">
                 <i class="bi bi-arrow-left-square-fill"></i> Back</a>
             </p>
         </div>
         <div class="col-6">
             <h2>Form Page!</h2>
             
-            <form action="#" th:action="@{/form}" th:object="${formItem}" method="POST">
+            <form action="#" th:action="@{/api/v1.0/form}" th:object="${formItem}" method="POST">
                 <div class="form-group">
                     <label for="confidence">Confidence</label>
                     <input class="form-control"

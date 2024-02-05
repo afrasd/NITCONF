@@ -7,17 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-
 import io.shraddha.model.ToDoItem;
 import io.shraddha.service.ToDoItemService;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
-@RequestMapping("/api/toreview")
+@Controller
+@RequestMapping("/toreview")
 public class ToDoFormController {
 
     @Autowired
@@ -26,7 +23,7 @@ public class ToDoFormController {
     private final Map<Long, ToDoItem> formDataMap = new HashMap<>();
 
     @GetMapping("/create")
-    public ModelAndView showCreateForm(Model model) {
+    public String showCreateForm(Model model) {
         ToDoItem toReviewItem = new ToDoItem();
         model.addAttribute("toreviewItem", toReviewItem);
 
@@ -36,19 +33,19 @@ public class ToDoFormController {
             model.addAttribute("toreviewItem", toReviewItem);
         }
 
-        return new ModelAndView("edit-toreview");
+        return "edit-toreview";
     }
 
     @PostMapping("/create")
-    public ModelAndView createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
+    public String createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
         if (result.hasErrors()) {
-            return new ModelAndView("edit-toreview");
+            return "edit-toreview";
         }
 
         // Store form data for the given ToDoItem ID
         formDataMap.put(toReviewItem.getId(), toReviewItem);
 
         toReviewItemService.save(toReviewItem);
-        return new ModelAndView("/"); // Redirect to the home page or another appropriate page
+        return "redirect:/"; // Redirect to the home page or another appropriate page
     }
 }

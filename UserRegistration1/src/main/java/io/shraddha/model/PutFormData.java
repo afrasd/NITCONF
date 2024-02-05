@@ -1,6 +1,8 @@
 package io.shraddha.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,7 @@ public class PutFormData implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     
     private Long sn;
+    private String pdfId;
     private String confidence;
     private String relevance;
     private String originality;
@@ -27,7 +30,16 @@ public class PutFormData implements Serializable {
     private String readability;
     private String commentval;
     
+    public String getPdfId() {
+    	return this.pdfId;
+    }
+
+    public void setPdfId(String pdfId) {
+        this.pdfId = pdfId;
+    }
    
+    
+    // break
     public Long getSn() {
         return this.sn;
     }
@@ -119,7 +131,12 @@ public class PutFormData implements Serializable {
     
     @Override
     public String toString() {
-        return String.format("FormData{sn=%d, confidence='%s', relevance='%s', originality='%s', significance='%s', techsound='%s', vocabulary='%s',quality='%s',readability='%s',commentval='%s'}",
-                sn, confidence, relevance, originality, significance, techsound,vocabulary,quality,readability,commentval);
+        return String.format("FormData{sn=%d, confidence='%s', relevance='%s', originality='%s', significance='%s', techsound='%s', vocabulary='%s',quality='%s',readability='%s',commentval='%s',pdfId='%s'}",
+                sn, confidence, relevance, originality, significance, techsound,vocabulary,quality,readability,commentval,pdfId);
     }
+
+	public LocalDate getDeadline() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

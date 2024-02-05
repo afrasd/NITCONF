@@ -56,11 +56,6 @@ public class ToDoItemService {
 	public void delete(ToDoItem toReviewItem) {
         toreviewRepository.delete(toReviewItem);
     }
-
-	public ToDoItem findByPdfId(String pdfId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	
 }

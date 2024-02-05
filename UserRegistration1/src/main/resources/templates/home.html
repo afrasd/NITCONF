@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
@@ -102,7 +102,7 @@
                     <span>Invalid Email or Password</span>
                 </div>
 
-                <form th:action="@{dummy}" method="post">
+                <form th:action="@{/login}" method="post">
                     <div class="form-group">
                         <label for="username">Username:</label>
                         <input class="form-control" id="username" name="username" placeholder="username" type="text"/>
@@ -118,7 +118,7 @@
             </div>
 
             <div class="panel-footer">
-                <a th:href="@{dummy}">Home Page</a>
+                <a th:href="@{/}">Home Page</a>
             </div>
         </div>
     </div>
