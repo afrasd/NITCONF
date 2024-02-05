@@ -1,0 +1,35 @@
+/* Buttons.css */
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.button-box {
+    border: 10px solid black; /* Black outline */
+    /*border-radius: 15px; /* Adjust the border radius as needed */
+    margin-bottom: 100px;
+    background-color: cyan;
+}
+
+.custom-button {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+    width: 200px;
+    height: 70px;
+    
+    border: none;
+    
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 700;
+    font-family:  sans-serif; /* Add your preferred font */
+    color: black; /* Font color */
+}
+
+.custom-button:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}

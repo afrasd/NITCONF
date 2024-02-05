@@ -1,0 +1,57 @@
+/* form.css */
+
+.container {
+    margin-top: 50px;
+  }
+  
+  .btn-back {
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    background-color: #f0f8ff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .criteria-box {
+    background-color: #add8e6;
+    border: 2px solid #5f9ea0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .criteria {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .btn-submit {
+    background-color: #00ced1;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #008b8b;
+  }
+  
