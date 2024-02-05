@@ -152,9 +152,16 @@
 //}
 package io.shraddha.controller;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -163,16 +170,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import io.shraddha.model.ToDoItem;
 import io.shraddha.model.PutFormData;
-import io.shraddha.service.ToDoItemService;
+import io.shraddha.model.ToDoItem;
 import io.shraddha.repo.ToAddFormRepository;
 import io.shraddha.repo.ToDoItemRepository;
-import java.util.Date;
-import java.util.List;
+import io.shraddha.service.ToDoItemService;
 
-import javax.validation.Valid;
-
+@CrossOrigin(origins = "http://localhost:3001")
 @RestController
 public class HomeController {
 
@@ -199,15 +203,23 @@ public class HomeController {
         return modelAndView;
     }
 
+//    @GetMapping("/api/v1.0/reviewed")
+//    public ModelAndView getReviewedItems() {
+//        List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
+//
+//        // Create a ModelAndView object and pass the data to the view
+//        ModelAndView modelAndView = new ModelAndView("reviewed");
+//        modelAndView.addObject("reviewedItems", reviewedItems);
+//        return modelAndView;
+//    }
+    
     @GetMapping("/api/v1.0/reviewed")
-    public ModelAndView getReviewedItems() {
+    public ResponseEntity<List<ToDoItem>> getReviewedItems() {
         List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
-
-        // Create a ModelAndView object and pass the data to the view
-        ModelAndView modelAndView = new ModelAndView("reviewed");
-        modelAndView.addObject("reviewedItems", reviewedItems);
-        return modelAndView;
+        System.out.println("Number of reviewed items: " + reviewedItems.size());
+        return ResponseEntity.ok(reviewedItems);
     }
+
 
   @Autowired
   private ToDoItemRepository toDoItemRepository;
