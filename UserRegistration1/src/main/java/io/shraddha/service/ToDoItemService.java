@@ -17,6 +17,14 @@ public class ToDoItemService {
 
 	@Autowired
 	private ToDoItemRepository toreviewRepository;
+
+	public ToDoItemService(ToDoItemRepository toReviewRepository) {
+		 this.toreviewRepository = toReviewRepository;
+	}
+
+	public void deleteByPdfId(String pdfIdToDelete) {
+	    toreviewRepository.deleteByPdfId(pdfIdToDelete);
+	}
 	
 	public List<ToDoItem> getAll() {
         return toreviewRepository.findAll();

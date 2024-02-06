@@ -306,7 +306,7 @@ public class HomeController {
             toReviewItemService.save(toReviewItem);
         }
     }
-
+/*
 	 @GetMapping("/api/v1.0/notifications")
 	    public ResponseEntity<List<ToDoItem>> getNotifications() {
 	        Date currentDate = new Date();
@@ -315,5 +315,32 @@ public class HomeController {
 	        List<ToDoItem> notifications = toReviewItemService.getNotifications(currentDate, twoDaysLater);
 
 	        return new ResponseEntity<>(notifications, HttpStatus.OK);
+	    }
+	 */
+//    @GetMapping("/api/v1.0/notifications")
+//    public ModelAndView getNotifications() {
+//        Date currentDate = new Date();
+//        Date twoDaysLater = new Date(System.currentTimeMillis() + 2 * 24 * 60 * 60 * 1000);
+//
+//        List<ToDoItem> notifications = toReviewItemService.getNotifications(currentDate, twoDaysLater);
+//
+//        ModelAndView modelAndView = new ModelAndView("notifications"); // Thymeleaf template name
+//        modelAndView.addObject("notifications", notifications);
+//
+//        return new ModelAndView("notifications");
+//    }
+	   // private ToDoItem toReviewItemService;
+
+	    @GetMapping("/api/v1.0/notifications")
+	    public ModelAndView getNotifications() {
+	        Date currentDate = new Date();
+	        Date twoDaysLater = new Date(System.currentTimeMillis() + 2 * 24 * 60 * 60 * 1000);
+
+	        List<ToDoItem> notifications = toReviewItemService.getNotifications(currentDate, twoDaysLater);
+
+	        ModelAndView modelAndView = new ModelAndView("notifications");
+	        modelAndView.addObject("notifications", notifications);
+
+	        return modelAndView;
 	    }
 }
