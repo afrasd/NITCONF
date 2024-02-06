@@ -91,7 +91,7 @@
         <a href="/api/v1.0/toreview">To Review</a>
         <a href="/api/v1.0/reviewed">Reviewed</a>
         <a href="/api/v1.0/history">History</a>
-        <a href="#" onclick="openModal()">Notification</a>
+        <a href="/api/v1.0/notifications" onclick="showNotifications()">Notification</a>
     </div>
 
     <h1>To Review!</h1>
@@ -140,30 +140,22 @@
     </p>
 </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Notification</h2>
-        <!-- Add your notification content here -->
-        <p>Notification content goes here...</p>
-    </div>
-</div>
 
-<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
-
-<script th:inline="javascript">
-    /* Open the modal */
-    function openModal() {
-        var modal = document.getElementById('myModal');
-        modal.style.display = 'block';
-    }
-
-    /* Close the modal */
-    function closeModal() {
-        var modal = document.getElementById('myModal');
-        modal.style.display = 'none';
+<!-- JavaScript for Notification Pop-up -->
+<script>
+    function showNotifications() {
+        // Make an AJAX request to fetch notifications
+        $.get("/api/v1.0/notifications", function (data) {
+            if (data.length > 0) {
+                let notificationText = "Reminders for papers with deadlines less than 2 days:\n";
+                data.forEach(function (item) {
+                    notificationText += "- " + item.title + "\n";
+                });
+                alert(notificationText);
+            } else {
+                alert("No pending reminders");
+            }
+        });
     }
 </script>
 

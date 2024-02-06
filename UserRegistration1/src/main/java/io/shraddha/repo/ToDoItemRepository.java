@@ -28,6 +28,9 @@ public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
 		@Modifying
 	    @Query("DELETE FROM ToDoItem p WHERE p.pdfId = :pdfId")
 	    void deleteByPdfId(@Param("pdfId") String pdfId); 
+		
+		@Query("SELECT t FROM ToDoItem t WHERE t.deadline BETWEEN :currentDate AND :twoDaysLater")
+	    List<ToDoItem> findNotifications(@Param("currentDate") Date currentDate, @Param("twoDaysLater") Date twoDaysLater);
 }
 
 

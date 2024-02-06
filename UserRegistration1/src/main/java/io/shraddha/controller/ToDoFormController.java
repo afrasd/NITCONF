@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/toreview")
+@RequestMapping("/api/v1.0")
 public class ToDoFormController {
 
     @Autowired

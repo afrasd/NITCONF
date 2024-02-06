@@ -153,6 +153,8 @@
 package io.shraddha.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -304,4 +306,14 @@ public class HomeController {
             toReviewItemService.save(toReviewItem);
         }
     }
+
+	 @GetMapping("/api/v1.0/notifications")
+	    public ResponseEntity<List<ToDoItem>> getNotifications() {
+	        Date currentDate = new Date();
+	        Date twoDaysLater = new Date(System.currentTimeMillis() + 2 * 24 * 60 * 60 * 1000); // Two days later
+
+	        List<ToDoItem> notifications = toReviewItemService.getNotifications(currentDate, twoDaysLater);
+
+	        return new ResponseEntity<>(notifications, HttpStatus.OK);
+	    }
 }

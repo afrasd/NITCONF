@@ -57,5 +57,8 @@ public class ToDoItemService {
         toreviewRepository.delete(toReviewItem);
     }
 	
+	public List<ToDoItem> getNotifications(Date currentDate, Date twoDaysLater) {
+        return toreviewRepository.findNotifications(currentDate, twoDaysLater);
+    }
 	
 }
