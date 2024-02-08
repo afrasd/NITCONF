@@ -152,9 +152,12 @@
 //}
 package io.shraddha.controller;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -165,15 +168,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import io.shraddha.model.ToDoItem;
 import io.shraddha.model.PutFormData;
-import io.shraddha.service.ToDoItemService;
+import io.shraddha.model.ToDoItem;
 import io.shraddha.repo.ToAddFormRepository;
 import io.shraddha.repo.ToDoItemRepository;
-import java.util.Date;
-import java.util.List;
-
-import javax.validation.Valid;
+import io.shraddha.service.ToDoItemService;
 
 @RestController
 public class HomeController {
@@ -271,10 +270,25 @@ public class HomeController {
       return new ModelAndView("form"); 
   }
 
+//  @PostMapping("/api/v1.0/form")
+//  public ModelAndView createToForm(@Valid @ModelAttribute("formItem") PutFormData addFormItem, BindingResult result) {
+//      if (result.hasErrors()) {
+//    	  return new ModelAndView("form"); 
+//      }
+//      toaddFormData.deleteByPdfId(formchange.getPdfId());
+//      // Set the pdfId in the form item
+//      addFormItem.setPdfId(formchange.getPdfId());
+//      
+//      // Save or update the form data
+//      toaddFormData.save(addFormItem);
+//      
+//      return new ModelAndView("toreview"); // Redirect to the home page or another appropriate page
+//  }
+  
   @PostMapping("/api/v1.0/form")
-  public ModelAndView createToForm(@Valid @ModelAttribute("formItem") PutFormData addFormItem, BindingResult result) {
+  public String createToForm(@Valid @ModelAttribute("formItem") PutFormData addFormItem, BindingResult result) {
       if (result.hasErrors()) {
-    	  return new ModelAndView("form"); 
+          return "form";
       }
       toaddFormData.deleteByPdfId(formchange.getPdfId());
       // Set the pdfId in the form item
@@ -283,8 +297,20 @@ public class HomeController {
       // Save or update the form data
       toaddFormData.save(addFormItem);
       
-      return new ModelAndView("toreview"); // Redirect to the home page or another appropriate page
+      // Update the status based on the action taken
+      ToDoItem toDoItem = toDoItemRepository.findByPdfId(formchange.getPdfId());
+      if (addFormItem.getStatus().equals("accept")) {
+          toDoItem.setStatus("accept");
+      } else if (addFormItem.getStatus().equals("reject")) {
+          toDoItem.setStatus("reject");
+      } else if (addFormItem.getStatus().equals("revise")) {
+          toDoItem.setStatus("pending");
+      }
+      toDoItemRepository.save(toDoItem);
+
+      return "redirect:/"; // Redirect to the "To Review" page
   }
+
   
     @GetMapping("/api/v1.0/delete")
     public ModelAndView delete(@RequestParam("pdfId") String pdfId) {

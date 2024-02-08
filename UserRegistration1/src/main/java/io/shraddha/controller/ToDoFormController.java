@@ -1,4 +1,9 @@
 package io.shraddha.controller;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,11 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
+
 import io.shraddha.model.ToDoItem;
 import io.shraddha.service.ToDoItemService;
-import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/api/v1.0")
@@ -37,7 +42,7 @@ public class ToDoFormController {
     }
 
     @PostMapping("/create")
-    public String createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
+    public String createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, @RequestParam("action") String action, BindingResult result) {
         if (result.hasErrors()) {
             return "edit-toreview";
         }
