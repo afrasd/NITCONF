@@ -112,6 +112,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return bearerToken.substring(7); // Remove "Bearer " prefix
         }
         
+        
         // No token found
         return null;
     }

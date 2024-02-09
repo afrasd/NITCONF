@@ -35,6 +35,7 @@ public class UserController {
     public String getSignup() {
         return "signup";
     }
+    
 
     @GetMapping("/login")
     public String getLogin() {
