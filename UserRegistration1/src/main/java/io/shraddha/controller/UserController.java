@@ -6,8 +6,10 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +39,21 @@ public class UserController {
     @GetMapping("/login")
     public String getLogin() {
         return "loginpage";
+    }
+    
+//    @CrossOrigin(origins = "http://127.0.0.1:3000")
+//    @GetMapping("/login")
+//    public ResponseEntity<String> login() {
+//        // Redirect to GitHub OAuth authentication page
+//        // Handle GitHub callback and exchange code for access token
+//        // Return access token to client
+//        String accessToken = "3b0e899330d8779065ea";
+//        return ResponseEntity.ok("{\"accessToken\": \"" + accessToken + "\"}");
+//    }    
+    
+    @GetMapping("/landingpage") // Add a separate mapping for landing page
+    public String getLandingPage() {
+        return "landingpage"; // Return the landing page template
     }
 
     @PostMapping("/addUser")
@@ -80,11 +97,11 @@ public class UserController {
                 return "redirect:/dummy";
             } else {
                 modelMap.put("error", "Invalid Account");
-                return "loginpage";
+                return "landingpage";
             }
         } else {
             modelMap.put("error", "Invalid Account");
-            return "loginpage";
+            return "landingpage";
         }
 
     }
@@ -94,6 +111,11 @@ public class UserController {
         session.removeAttribute("username");
         session.invalidate();
         return "redirect:/login";
+    }
+    
+    @GetMapping("/")
+    public String landingPage() {
+        return "landingpage"; // Return the landing page template
     }
     
 //    @GetMapping("/toreview")

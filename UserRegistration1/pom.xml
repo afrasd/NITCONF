@@ -113,6 +113,12 @@
 		<artifactId>springfox-swagger-ui</artifactId>
 		<version>2.9.2</version>
 	</dependency>
+	
+	 <!-- Spring Security OAuth 2.0 Resource Server for OAuth 2.0 resource server -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-oauth2-resource-server</artifactId>
+    </dependency>
 		
 </dependencies>
 

@@ -40,6 +40,15 @@ public class ToDoFormController {
 
         return "edit-toreview";
     }
+    
+    /**
+     * createToReview
+     * Controller method to handle form submission for creating a ToDoItem
+     * @param toReviewItem : {@link ToDoItem} The ToDoItem object to be created
+     * @param action : {@link String} The action parameter indicating the action to be performed
+     * @param result : {@link BindingResult} BindingResult to capture validation errors, if any
+     * @return String: Redirects to the home page or another appropriate page after successful creation
+     */
 
     @PostMapping("/create")
     public String createToReview(@Valid @ModelAttribute("toreviewItem") ToDoItem toReviewItem, @RequestParam("action") String action, BindingResult result) {
