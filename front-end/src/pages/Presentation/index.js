@@ -57,7 +57,7 @@ function Presentation() {
             <button
               onClick={loginWithGithub}
               style={{
-                background: "linear-gradient(#006400, #00800044)",
+                background: "l#008000",
                 borderRadius: "8px",
                 borderStyle: "none",
                 boxSizing: "border-box",
