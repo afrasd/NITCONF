@@ -8,11 +8,39 @@ import Information from "pages/Presentation/sections/Information";
 import Testimonials from "pages/Presentation/sections/Testimonials";
 import bgImage from "assets/images/bg-presentation.jpg";
 
-const CLIENT_ID = "9fa6abecbb91d78acaf3";
+// const CLIENT_ID = "";
+
+// function loginWithGithub() {
+//   window.location.assign("https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID);
+// }
+
+
+const CLIENT_ID = "";
+const REDIRECT_URI = "http://localhost:8080/dummy"; // Specify your redirect URI
 
 function loginWithGithub() {
-  window.location.assign("https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID);
+  const redirectUrl = encodeURIComponent(REDIRECT_URI);
+  window.location.assign(
+    `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${redirectUrl}`
+  );
 }
+// function loginWithGithub() {
+//   fetch("http://localhost:8080/login")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Failed to fetch access token");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       if (!data || !data.accessToken) {
+//         throw new Error("Access token not found in response");
+//       }
+//       localStorage.setItem("accessToken", data.accessToken);
+//       window.location.assign("http://localhost:8080"); // Redirect to backend after authentication
+//     })
+//     .catch((error) => console.error("Error logging in:", error.message));
+// }
 
 function Presentation() {
   return (
