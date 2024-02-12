@@ -39,7 +39,15 @@ public class ProfileController {
 
     @Autowired
     private ProfileDataService profileDataService;
-
+    
+    
+    /**
+     * Retrieve and display the user's profile information.
+     * 
+     * @param authentication - Authentication object containing user authentication details
+     * @param model          - Model object to add attributes for rendering in the view
+     * @return String representing the view name for the user's profile page
+     */
     @GetMapping("/profile")
     public String profile(Authentication authentication,Model model) {
     	OAuth2User oauth2User = (OAuth2User) authentication.getPrincipal();

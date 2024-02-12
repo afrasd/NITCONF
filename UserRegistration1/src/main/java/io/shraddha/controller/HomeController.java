@@ -179,13 +179,26 @@ public class HomeController {
 
     @Autowired
     private ToDoItemService toReviewItemService;
-
+    
+    
+    /**
+     * Display all form data for a specified PDF ID.
+     * 
+     * @param pdfId - The ID of the PDF for which form data is to be displayed
+     * @return ModelAndView containing the form data
+     */
     @GetMapping("/api/v1.0/display-all")
     public ModelAndView displayAll(@RequestParam("pdfId") String pdfId) {
         List<PutFormData> formDataList = toaddFormData.findByPdfId(pdfId);
         return new ModelAndView("display-all", "formDataList", formDataList);
     }
-
+    
+    
+    /**
+     * Retrieve data for pdf ids that crossed the deadline.
+     * 
+     * @return ModelAndView containing the expired items
+     */
     @GetMapping("/api/v1.0/history")
     public ModelAndView getExpiredItems() {
         // Get the current date
@@ -200,6 +213,11 @@ public class HomeController {
         return modelAndView;
     }
 
+    /**
+     * Retrieve data for reviewed items.
+     * 
+     * @return ModelAndView containing the reviewed items
+     */
     @GetMapping("/api/v1.0/reviewed")
     public ModelAndView getReviewedItems() {
         List<ToDoItem> reviewedItems = toReviewItemService.getReviewedItems();
@@ -213,6 +231,13 @@ public class HomeController {
   @Autowired
   private ToDoItemRepository toDoItemRepository;
   
+  
+  /**
+   * Submit form data for a specified PDF ID.
+   * 
+   * @param pdfId - The ID of the PDF for which form data is to be submitted
+   * @return RedirectView to the "To Review" page
+   */
   @GetMapping("/api/v1.0/submit")
   public RedirectView submit(@RequestParam("pdfId") String pdfId) {
       System.out.println("PDF ID: " + pdfId);
@@ -248,7 +273,16 @@ public class HomeController {
 
   @Autowired
   private ToAddFormRepository toaddFormData;
+  
+  
 
+  /**
+   * Display the form for adding or editing review given to paper.
+   * 
+   * @param model - The model to add attributes to
+   * @param pdfId - The ID of the PDF for which form data is to be displayed
+   * @return ModelAndView containing the form
+   */
   @GetMapping("/api/v1.0/form")
   public ModelAndView showCreateForm(Model model, @RequestParam("pdfId") String pdfId) {
       System.out.println("PDF ID: " + pdfId);
@@ -285,6 +319,15 @@ public class HomeController {
 //      return new ModelAndView("toreview"); // Redirect to the home page or another appropriate page
 //  }
   
+  
+  
+  /**
+   * Save form data.
+   * 
+   * @param addFormItem - The form data to be saved
+   * @param result      - The result of the form validation
+   * @return String indicating the status of the operation
+   */
   @PostMapping("/api/v1.0/form")
   public String createToForm(@Valid @ModelAttribute("formItem") PutFormData addFormItem, BindingResult result) {
       if (result.hasErrors()) {
@@ -312,6 +355,13 @@ public class HomeController {
   }
 
   
+  
+  /**
+   * Delete form data for a specified PDF ID.
+   * 
+   * @param pdfId - The ID of the PDF for which form data is to be deleted
+   * @return ModelAndView to the "To Review" page
+   */
     @GetMapping("/api/v1.0/delete")
     public ModelAndView delete(@RequestParam("pdfId") String pdfId) {
         toDoItemRepository.deleteByPdfId(pdfId);
@@ -333,6 +383,12 @@ public class HomeController {
 //        }
 //    }
     
+    
+    /**
+     * Retrieve items to review.
+     * 
+     * @return ModelAndView containing the items to review
+     */
     @GetMapping("/api/v1.0/toreview")
     public ModelAndView viewToReviewItems() {
         List<ToDoItem> toReviewItems = toReviewItemService.getToReviewItemsWithSubmittedZero();
@@ -346,6 +402,14 @@ public class HomeController {
         return modelAndView;
     }
 
+
+    /**
+     * Save an item to review.
+     * 
+     * @param toReviewItem - The item to be saved
+     * @param result       - The result of the form validation
+     * @return String indicating the status of the operation
+     */
     @PostMapping("/api/v1.0/toreview")
     public String createToReview(@ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
         if (!result.hasErrors()) {
@@ -380,6 +444,13 @@ public class HomeController {
 //    }
 	   // private ToDoItem toReviewItemService;
 
+    
+    
+    /**
+     * Retrieve notifications for items to review.
+     * 
+     * @return ModelAndView containing the notifications
+     */
 	    @GetMapping("/api/v1.0/notifications")
 	    public ModelAndView getNotifications() {
 	        Date currentDate = new Date();
