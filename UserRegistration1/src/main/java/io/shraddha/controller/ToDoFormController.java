@@ -27,6 +27,15 @@ public class ToDoFormController {
 
     private final Map<Long, ToDoItem> formDataMap = new HashMap<>();
 
+    /**
+     * showCreateForm
+     * Controller method for displaying the create form
+     * @param model : {@link Model} Model object to add attributes for the view
+     * @return String: Returns the name of the view template for editing or creating a ToDoItem
+     * @since 1.0
+     * @author <a href="https://github.com/shraddhayelamarthy?tab=repositories"> Shraddha Yelamarthy</a>
+     * @GetMapping("/create") // Specifies the mapping for handling GET requests to show the create form
+     */
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         ToDoItem toReviewItem = new ToDoItem();
@@ -48,6 +57,8 @@ public class ToDoFormController {
      * @param action : {@link String} The action parameter indicating the action to be performed
      * @param result : {@link BindingResult} BindingResult to capture validation errors, if any
      * @return String: Redirects to the home page or another appropriate page after successful creation
+     * @since 1.0
+     * @author <a href="https://github.com/shraddhayelamarthy?tab=repositories"> Shraddha Yelamarthy</a>
      */
 
     @PostMapping("/create")
