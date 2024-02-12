@@ -18,6 +18,10 @@ import java.util.Date;
 @Repository
 public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
 	ToDoItem findByPdfId(String pdfId);
+
+    @Query("SELECT t.pdf_link FROM ToDoItem t WHERE t.pdfId = :pdfId")
+    String findPdfLinkByPdfId(@Param("pdfId") String pdfId);
+	
 	List<ToDoItem> findBySubmitted(int submitted);
 
 	 @Query("SELECT t FROM ToDoItem t WHERE t.deadline < :currentDate")

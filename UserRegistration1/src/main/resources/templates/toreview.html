@@ -98,8 +98,8 @@
     <h1>To Review!</h1>
     <hr />
 
-    <table class="table table-bordered table-striped">
-        <thead>
+<table class="table table-bordered table-striped">
+    <thead>
         <tr>
             <th>PDF ID</th>
             <th>Paper Title / Paper ID</th>
@@ -108,8 +108,8 @@
             <th>Deadline</th>
             <th>Action</th>
         </tr>
-        </thead>
-        <tbody>
+    </thead>
+    <tbody>
         <tr th:each="item : ${toReviewItems}">
             <td th:text="${item.pdfId}"></td>
             <td>
@@ -117,7 +117,8 @@
                     <a class="btn btn-primary" th:href="@{/api/v1.0/display-all(pdfId=${item.pdfId})}">
                         <i class="bi bi-list"></i> Display All</a>
                 </div>
-                <span th:text="${item.title}"></span>
+                <a th:if="${item.pdf_link != null}" th:href="${item.pdf_link}" th:text="${item.title}"></a>
+                <span th:if="${item.pdf_link == null}" th:text="${item.title}"></span>
             </td>
             <td th:text="${item.status}" th:class="${item.status == 'accept' ? 'text-success' : (item.status == 'reject' ? 'text-danger' : 'text-warning')}"></td>
             <td th:text="${item.revision}"></td>
@@ -133,8 +134,8 @@
                 </div>
             </td>
         </tr>
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
     <p><a class="btn btn-outline-success" href="/api/v1.0/create-to-review">
        <i class="bi bi-plus-square-fill"></i> Create a To Review Item</a>

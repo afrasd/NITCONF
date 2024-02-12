@@ -318,20 +318,43 @@ public class HomeController {
         return new ModelAndView("toreview");
     }
     
+//    @GetMapping("/api/v1.0/toreview")
+//    public ModelAndView viewToReviewItems() {
+//        List<ToDoItem> toReviewItems = toReviewItemService.getToReviewItemsWithSubmittedZero();
+//        ModelAndView modelAndView = new ModelAndView("toreview");
+//        modelAndView.addObject("toReviewItems", toReviewItems);
+//        return modelAndView;
+//    }
+//
+//    @PostMapping("/api/v1.0/toreview")
+//    public void createToReview(@ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
+//        if (!result.hasErrors()) {
+//            toReviewItemService.save(toReviewItem);
+//        }
+//    }
+    
     @GetMapping("/api/v1.0/toreview")
     public ModelAndView viewToReviewItems() {
         List<ToDoItem> toReviewItems = toReviewItemService.getToReviewItemsWithSubmittedZero();
+        for (ToDoItem item : toReviewItems) {
+            String pdfId = item.getPdfId();
+            String pdfLink = toDoItemRepository.findPdfLinkByPdfId(pdfId);
+            item.setPdf_link(pdfLink);
+        }
         ModelAndView modelAndView = new ModelAndView("toreview");
         modelAndView.addObject("toReviewItems", toReviewItems);
         return modelAndView;
     }
 
     @PostMapping("/api/v1.0/toreview")
-    public void createToReview(@ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
+    public String createToReview(@ModelAttribute("toreviewItem") ToDoItem toReviewItem, BindingResult result) {
         if (!result.hasErrors()) {
             toReviewItemService.save(toReviewItem);
         }
+        return "redirect:/api/v1.0/toreview";
     }
+    
+    
 /*
 	 @GetMapping("/api/v1.0/notifications")
 	    public ResponseEntity<List<ToDoItem>> getNotifications() {
