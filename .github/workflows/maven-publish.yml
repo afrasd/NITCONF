@@ -24,9 +24,9 @@ jobs:
           cd UserRegistration1
           mvn -B package --file pom.xml
           mkdir ./artifacts
-	  cp .\target\*.jar .\artifacts\
+          cp ./target/*.jar ./artifacts/
           cd ./artifacts
-	  ls
+          ls
       - name: Save artifact 
         uses: actions/upload-artifact@v2
         with:
@@ -36,4 +36,3 @@ jobs:
         run: |
           cd UserRegistration1
           mvn test
-  
