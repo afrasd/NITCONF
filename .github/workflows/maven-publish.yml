@@ -30,4 +30,8 @@ jobs:
         with:
           name: github-actions-artifact
           path: artifacts
-
+      - name: Run tests
+        run: |
+          cd UserRegistration1
+          mvn test
+  
