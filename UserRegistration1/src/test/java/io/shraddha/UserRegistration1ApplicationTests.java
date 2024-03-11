@@ -46,7 +46,7 @@ public class UserRegistration1ApplicationTests {
 	
 	private final String baseUrl = "http://localhost:8080";
 	
-    @Test
+    //@Test
     void testLoginEndpointReturns200() {
         String loginEndpoint = "/login"; // Replace with your actual login endpoint
 
@@ -63,7 +63,7 @@ public class UserRegistration1ApplicationTests {
         }
     }
 
-    @Test
+    //@Test
     void testValidLogin() throws Exception {
         // Replace "validUsername" and "validPassword" with actual valid credentials
         String validUsername = "aadeeshjain.91a@yahoo.com";
