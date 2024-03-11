@@ -58,7 +58,7 @@
 <body>
 
     <div class="icon-container">
-        <a href="api/v1.0/toreview" class="icon green-bg">To Review</a>
+        <a href="toreview" class="icon green-bg">To Review</a>
         <button class="icon blue-bg" th:onclick="showReviewed()">Reviewed</button>
         <button class="icon violet-bg" th:onclick="showHistory()">History</button>
     </div>
@@ -69,12 +69,12 @@
     <script th:inline="javascript">
         function showReviewed() {
             /* Redirect to the reviewed.html file */
-            window.location.href = 'api/v1.0/reviewed';
+            window.location.href = 'reviewed';
         }
 
         function showHistory() {
             /* Redirect to the history.html file */
-            window.location.href = 'api/v1.0/history';
+            window.location.href = 'history';
         }
     </script>
 </body>

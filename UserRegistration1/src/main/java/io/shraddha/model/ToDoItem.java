@@ -24,19 +24,8 @@ public class ToDoItem implements Serializable {
     private String paperstatus;
     private String revision;
     private Date deadline;
-    private String pdf_link;
     private int submitted;
     
-    ////
-    public String getPdf_link() {
-        return pdf_link;
-    }
-
-    public void setPdf_link(String pdf_link) {
-        this.pdf_link = pdf_link;
-    }
-    
-    ////
     
     public int getSubmitted() {
     	return this.submitted;
@@ -96,7 +85,7 @@ public class ToDoItem implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("ToReview{id=%d, pdfId='%s', title='%s', status='%s', revision='%s', deadline='%s', submitted=%d, pdf_link='%s'}",
-                id, pdfId, title, paperstatus, revision, deadline,submitted,pdf_link);
+        return String.format("ToReview{id=%d, pdfId='%s', title='%s', status='%s', revision='%s', deadline='%s', submitted=%d}",
+                id, pdfId, title, paperstatus, revision, deadline,submitted);
     }
 }

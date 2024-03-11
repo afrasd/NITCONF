@@ -1,13 +1,13 @@
 package io.shraddha.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.repository.query.Param;
 import io.shraddha.model.ToDoItem;
 import io.shraddha.model.PutFormData;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.data.jpa.repository.Modifying;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -18,10 +18,6 @@ import java.util.Date;
 @Repository
 public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
 	ToDoItem findByPdfId(String pdfId);
-
-    @Query("SELECT t.pdf_link FROM ToDoItem t WHERE t.pdfId = :pdfId")
-    String findPdfLinkByPdfId(@Param("pdfId") String pdfId);
-	
 	List<ToDoItem> findBySubmitted(int submitted);
 
 	 @Query("SELECT t FROM ToDoItem t WHERE t.deadline < :currentDate")
@@ -32,9 +28,9 @@ public interface ToDoItemRepository extends JpaRepository<ToDoItem, Long>{
 		@Modifying
 	    @Query("DELETE FROM ToDoItem p WHERE p.pdfId = :pdfId")
 	    void deleteByPdfId(@Param("pdfId") String pdfId); 
-		
 		@Query("SELECT t FROM ToDoItem t WHERE t.deadline BETWEEN :currentDate AND :twoDaysLater")
 	    List<ToDoItem> findNotifications(@Param("currentDate") Date currentDate, @Param("twoDaysLater") Date twoDaysLater);
+		
 }
 
 

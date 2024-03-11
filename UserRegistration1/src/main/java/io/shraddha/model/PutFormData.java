@@ -29,7 +29,6 @@ public class PutFormData implements Serializable {
     private String quality;
     private String readability;
     private String commentval;
-    private String status;
     
     public String getPdfId() {
     	return this.pdfId;
@@ -128,14 +127,6 @@ public class PutFormData implements Serializable {
 
     public void setCommentval(String commentval) {
         this.commentval = commentval;
-    }
-    
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
     
     @Override

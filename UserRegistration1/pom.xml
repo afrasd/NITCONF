@@ -49,8 +49,7 @@
 		    <artifactId>tomcat-jasper</artifactId>
 		    <version>9.0.33</version>
 		</dependency>
-
-
+		
 		<dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
@@ -68,15 +67,7 @@
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-oauth2-client</artifactId>
-</dependency>
 
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-oauth2-client</artifactId>
-</dependency>
 
     <!-- Other dependencies -->
     <dependency>
@@ -90,36 +81,29 @@
 			<artifactId>bootstrap</artifactId>
 			<version>5.2.2</version>
 		</dependency>
-
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-oauth2-client</artifactId>
-</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.webjars.npm/bootstrap-icons -->
 		<dependency>
 			<groupId>org.webjars.npm</groupId>
 			<artifactId>bootstrap-icons</artifactId>
 			<version>1.10.2</version>
 		</dependency>
-		
-		<dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger2</artifactId>
-		<version>2.9.2</version>
-	</dependency>
-        <dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger-ui</artifactId>
-		<version>2.9.2</version>
-	</dependency>
-	
-	 <!-- Spring Security OAuth 2.0 Resource Server for OAuth 2.0 resource server -->
+		<!-- Spring Boot Starter Web -->
     <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-oauth2-resource-server</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-		
+
+    <!-- Spring Boot Starter Security -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <!-- Spring Boot Starter OAuth2 Client -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
 </dependencies>
 
 	<build>

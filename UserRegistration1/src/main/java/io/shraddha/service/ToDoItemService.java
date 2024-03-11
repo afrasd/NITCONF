@@ -17,15 +17,11 @@ public class ToDoItemService {
 
 	@Autowired
 	private ToDoItemRepository toreviewRepository;
-
+	
 	public ToDoItemService(ToDoItemRepository toReviewRepository) {
 		 this.toreviewRepository = toReviewRepository;
 	}
 
-	public void deleteByPdfId(String pdfIdToDelete) {
-	    toreviewRepository.deleteByPdfId(pdfIdToDelete);
-	}
-	
 	public List<ToDoItem> getAll() {
         return toreviewRepository.findAll();
     }
@@ -64,9 +60,13 @@ public class ToDoItemService {
 	public void delete(ToDoItem toReviewItem) {
         toreviewRepository.delete(toReviewItem);
     }
-	
 	public List<ToDoItem> getNotifications(Date currentDate, Date twoDaysLater) {
         return toreviewRepository.findNotifications(currentDate, twoDaysLater);
     }
+
+	public void deleteByPdfId(String pdfIdToDelete) {
+	    toreviewRepository.deleteByPdfId(pdfIdToDelete);
+	}
+
 	
 }
