@@ -1,0 +1,123 @@
+	<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-color: plum;
+            margin-top: 50px; /* Added margin to accommodate the fixed navbar */
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .panel-info {
+            width: 400px;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+            margin-top: 25px;
+        }
+
+        .panel-title {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .panel-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-success {
+            background-color: #5cb85c;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #4cae4c;
+        }
+
+        .panel-footer {
+            text-align: center;
+            padding: 10px;
+            background-color: lavender;
+            border-top: 1px solid lemonchiffon;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Popup -->
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-title">
+                <span>Sign In</span>
+            </div>
+
+            <div class="panel-body" id="login-panel-body">
+                <!-- Thymeleaf fragment for success message -->
+                <div th:if="${param.success}" class="alert alert-success">
+                    <span>Login successful!</span>
+                </div>
+
+                <!-- Thymeleaf fragment for error message -->
+                <div th:if="${param.error}" class="alert alert-danger">
+                    <span>Invalid Email or Password</span>
+                </div>
+
+                <form th:action="@{/login}" method="post">
+
+                    <div class="form-group">
+                        <button type="button" onclick="window.location.href='/oauth2/authorization/github'" class="btn btn-primary form-control">GitHub Authentication</button>
+                        
+                    </div>
+                </form>
+            </div>
+
+            <div class="panel-footer">
+                <a th:href="@{/}">Home Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>
