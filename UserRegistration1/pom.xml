@@ -49,26 +49,21 @@
 		    <artifactId>tomcat-jasper</artifactId>
 		    <version>9.0.33</version>
 		</dependency>
+
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>
     <version>5.8.1</version> <!-- Make sure to use the appropriate version -->
     <scope>test</scope>
 </dependency>
+
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>5.8.1</version> <!-- or the latest version -->
+    <version>4.13.2</version> <!-- or the latest version -->
     <scope>test</scope>
 </dependency>
 
-<dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-    </dependency>
-		
 		<dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
@@ -126,7 +121,6 @@
 		<artifactId>springfox-swagger2</artifactId>
 		<version>2.9.2</version>
 	</dependency>
-		
         <dependency>
 		<groupId>io.springfox</groupId>
 		<artifactId>springfox-swagger-ui</artifactId>
