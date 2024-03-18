@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -76,6 +76,216 @@
             /* Redirect to the history.html file */
             window.location.href = 'api/v1.0/history';
         }
+    </script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}" integrity="sha384-GLhlTQ8i1UqFJYYNl68P6s7FfOVrialF2N3tDCKG5tr5Szkbe5P/SFIIJdA2LZ+e" crossorigin="anonymous">
+    <title>Vertical Icons</title>
+    <style>
+        /* Add CSS styles for the title typewriter effect */
+        .title-container {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 50px; /* Adjust margin-top to move closer to the top */
+        }
+
+        .title-text {
+            overflow: hidden; /* Hide overflow text */
+            border-right: .15em solid orange; /* Add typewriter cursor */
+            white-space: nowrap; /* Keep text on one line */
+            margin: 0 auto; /* Center text */
+            letter-spacing: .15em; /* Adjust letter spacing */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        /* Add CSS styles for the description typewriter effect */
+        .description-text {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px; /* Adjust margin-top to move closer to the top */
+            overflow: hidden; /* Hide overflow text */
+            white-space: pre-line; /* Preserve line breaks */
+            letter-spacing: .15em; /* Adjust letter spacing */
+            animation: typing 5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        /* Add CSS for the rest of the page */
+        body {
+            font-family: 'Calibri', sans-serif;
+            margin: 0;
+            background-color: #dbeeff; /* Soft pastel blue */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.5s; /* Smooth background color transition */
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 400px;
+            height: 250px;
+            cursor: pointer;
+            perspective: 1000px; /* Adding 3D perspective */
+            margin: 20px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s; /* Smooth transition for flipping */
+            transform-style: preserve-3d; /* Preserve 3D transformations */
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg); /* Flip the card on hover */
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden; /* Hide the back of the card */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            padding: 20px;
+        }
+
+        .card-front {
+            background-color: #41b3a3; /* Light teal */
+            color: white;
+            text-align: center;
+        }
+
+        .card-back {
+            background-color: #6fa5e6; /* Sky blue */
+            color: #dbeeff;
+            transform: rotateY(180deg); /* Initially hide the back of the card */
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .btn-secondary {
+            background-color: #4f81af; /* Steel blue */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title with typewriter effect -->
+    <div class="title-container">
+        <h1 class="title-text"></h1>
+    </div>
+
+    <!-- Description with typewriter effect -->
+    <div class="description-container">
+        <p class="description-text"></p>
+    </div>
+
+    <!-- Card container -->
+    <div class="card-container">
+        <div class="card" onclick="window.location.href = 'api/v1.0/toreview';">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3><strong>TO REVIEW</strong></h3>
+                </div>
+                <div class="card-back">
+                    <p>This page provides access to multiple papers for review. Please carefully evaluate each paper based on the specified parameters. You have the opportunity to provide ratings and feedback. Papers may be returned to authors for revisions and resubmission based on your assessments.</p>
+                    <div class="button-container">
+                        <button class="btn btn-secondary" onclick="window.location.href = 'api/v1.0/toreview';">To Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href = 'api/v1.0/reviewed';">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3><strong>REVIEWED</strong></h3>
+                </div>
+                <div class="card-back">
+                    <p>This page showcases all your completed reviews. Feel free to edit any review and resubmit it if necessary, prior to the deadline.</p>
+                    <div class="button-container">
+                        <button class="btn btn-secondary" onclick="window.location.href = 'api/v1.0/reviewed';">Reviewed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href = 'api/v1.0/history';">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3><strong>HISTORY</strong></h3>
+                </div>
+                <div class="card-back">
+                    <p>This page serves as a comprehensive history of your reviewed papers, offering insight into your past evaluations and feedback beyond the submission deadline.</p>
+                    <div class="button-container">
+                        <button class="btn btn-secondary" onclick="window.location.href = 'api/v1.0/history';">History</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script th:src="@{https://code.jquery.com/jquery-3.4.1.slim.min.js}" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js}" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Typewriter effect animation -->
+    <script>
+        var i = 0;
+        var txt = 'NITCONF'; /* Title text */
+        var speed = 100; /* Typing speed in milliseconds */
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementsByClassName("title-text")[0].innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        var j = 0;
+        var desc = `Explore insightful reviews penned by world-renowned authors across various domains. 
+        Delve into the depths of their expertise as they dissect complex topics, 
+        unravel profound insights, and offer nuanced perspectives. 
+        Join us at NITCONF for a journey through the realms of knowledge.`; /* Description text */
+
+        function typeDescription() {
+            if (j < desc.length) {
+                document.getElementsByClassName("description-text")[0].innerHTML += desc.charAt(j);
+                j++;
+                setTimeout(typeDescription, speed);
+            }
+        }
+
+        typeWriter(); /* Call typewriter function for title */
+        setTimeout(typeDescription, 2000); /* Call typewriter function for description after 2 seconds */
     </script>
 </body>
 </html>
