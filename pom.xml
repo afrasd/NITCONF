@@ -56,6 +56,12 @@
     <scope>test</scope>
 </dependency>
 
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>5.8.1</version> <!-- or the latest version -->
+    <scope>test</scope>
+</dependency>
 
 		<dependency>
     <groupId>org.apache.tomcat.embed</groupId>
@@ -114,6 +120,7 @@
 		<artifactId>springfox-swagger2</artifactId>
 		<version>2.9.2</version>
 	</dependency>
+		
         <dependency>
 		<groupId>io.springfox</groupId>
 		<artifactId>springfox-swagger-ui</artifactId>
