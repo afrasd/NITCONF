@@ -49,6 +49,12 @@
 		    <artifactId>tomcat-jasper</artifactId>
 		    <version>9.0.33</version>
 		</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.8.1</version> <!-- Make sure to use the appropriate version -->
+    <scope>test</scope>
+</dependency>
 
 
 		<dependency>
