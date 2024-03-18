@@ -17,7 +17,7 @@
 	        ToDoItemRepository toDoItemRepository = mock(ToDoItemRepository.class);
 	
 	        // Instantiate the service with the mocked repository
-	        toDoItemService = new ToDoItemService(toDoItemRepository);
+	        toDoItemService = new ToDoItemService(toDoItemRepository, null);
 	
 	        // Call the method to be tested
 	        toDoItemService.deleteByPdfId("examplePdfId");

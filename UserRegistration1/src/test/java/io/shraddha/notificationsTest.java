@@ -36,7 +36,7 @@ public class notificationsTest {
         when(toReviewRepository.findNotifications(currentDate, twoDaysLater)).thenReturn(mockItems);
 
         // Instantiate the service with the mocked repository
-        toDoItemService = new ToDoItemService(toReviewRepository);
+        toDoItemService = new ToDoItemService(toReviewRepository, null);
 
         // Call the method to be tested
         List<ToDoItem> result = toDoItemService.getNotifications(currentDate, twoDaysLater);

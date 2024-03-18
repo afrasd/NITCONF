@@ -13,7 +13,11 @@ public class PdfLinkController {
     @Autowired
     private ToDoItemRepository toDoItemRepository;
 
-    @GetMapping("/pdf-link/{pdfId}")
+    public PdfLinkController(ToDoItemRepository toDoItemRepository2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@GetMapping("/pdf-link/{pdfId}")
     public String getPdfLink(@PathVariable String pdfId) {
         ToDoItem toDoItem = toDoItemRepository.findByPdfId(pdfId);
         if (toDoItem != null) {

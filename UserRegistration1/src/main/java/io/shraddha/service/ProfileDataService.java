@@ -2,7 +2,6 @@ package io.shraddha.service;
 
 import io.shraddha.model.ProfileData;
 import io.shraddha.repo.ProfileDataRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +9,11 @@ import java.util.Optional;
 @Service
 public class ProfileDataService {
 
-    @Autowired
-    private ProfileDataRepository profileDataRepository;
+    private final ProfileDataRepository profileDataRepository;
+
+    public ProfileDataService(ProfileDataRepository profileDataRepository) {
+        this.profileDataRepository = profileDataRepository;
+    }
 
     public List<ProfileData> getAllProfileData() {
         return profileDataRepository.findAll();

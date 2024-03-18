@@ -10,63 +10,57 @@ import io.shraddha.repo.ToAddFormRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Date; // Import Date class
+import java.util.Date;
 
 @Service
 public class ToDoItemService {
 
-	@Autowired
-	private ToDoItemRepository toreviewRepository;
+    private final ToDoItemRepository toreviewRepository;
+    private final ToAddFormRepository toaddFormData;
 
-	public ToDoItemService(ToDoItemRepository toReviewRepository) {
-		 this.toreviewRepository = toReviewRepository;
-	}
+    @Autowired
+    public ToDoItemService(ToDoItemRepository toReviewRepository, ToAddFormRepository toAddFormRepository) {
+        this.toreviewRepository = toReviewRepository;
+        this.toaddFormData = toAddFormRepository;
+    }
 
-	public void deleteByPdfId(String pdfIdToDelete) {
-	    toreviewRepository.deleteByPdfId(pdfIdToDelete);
-	}
-	
-	public List<ToDoItem> getAll() {
+    public void deleteByPdfId(String pdfIdToDelete) {
+        toreviewRepository.deleteByPdfId(pdfIdToDelete);
+    }
+
+    public List<ToDoItem> getAll() {
         return toreviewRepository.findAll();
     }
 
-	public List<ToDoItem> getExpiredItems(Date currentDate) {
-        // Implement logic to fetch items with dates less than the current date
+    public List<ToDoItem> getExpiredItems(Date currentDate) {
         return toreviewRepository.findExpiredItems(currentDate);
     }
-    
-//	public List<ToDoItem> getHistoryItems() {
-//	    return toreviewRepository.findByDeadlineBefore(LocalDate.now());
-//	}
-	public List<ToDoItem> getReviewedItems() {
-	    return toreviewRepository.findBySubmitted(1);
-	}
+
+    public List<ToDoItem> getReviewedItems() {
+        return toreviewRepository.findBySubmitted(1);
+    }
+
     public List<ToDoItem> getToReviewItemsWithSubmittedZero() {
         return toreviewRepository.findBySubmitted(0);
     }
-	public Optional<ToDoItem> getById(Long id) {
+
+    public Optional<ToDoItem> getById(Long id) {
         return toreviewRepository.findById(id);
     }
-	
-	public ToDoItem save(ToDoItem toReviewItem) {
 
+    public ToDoItem save(ToDoItem toReviewItem) {
         return toreviewRepository.save(toReviewItem);
     }
-	
-	@Autowired
-	private ToAddFormRepository toaddFormData;
 
-	public PutFormData saveform(PutFormData addFormItem) {
-
+    public PutFormData saveform(PutFormData addFormItem) {
         return toaddFormData.save(addFormItem);
     }
-	
-	public void delete(ToDoItem toReviewItem) {
+
+    public void delete(ToDoItem toReviewItem) {
         toreviewRepository.delete(toReviewItem);
     }
-	
-	public List<ToDoItem> getNotifications(Date currentDate, Date twoDaysLater) {
+
+    public List<ToDoItem> getNotifications(Date currentDate, Date twoDaysLater) {
         return toreviewRepository.findNotifications(currentDate, twoDaysLater);
     }
-	
 }
