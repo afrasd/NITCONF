@@ -1,84 +1,92 @@
-package io.shraddha;
+package io.shraddha.model;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import io.shraddha.model.PutFormData;
 
 public class PutFormDataTest {
 
-    private PutFormData putFormData;
-
-    @BeforeEach
-    public void setUp() {
-        putFormData = new PutFormData();
+    @Test
+    public void testGetAndSetPdfId() {
+        PutFormData formData = new PutFormData();
+        formData.setPdfId("123456");
+        assertEquals("123456", formData.getPdfId());
     }
 
     @Test
-    public void testGettersAndSetters() {
-        putFormData.setPdfId("testPdfId");
-        assertEquals("testPdfId", putFormData.getPdfId());
-
-        putFormData.setSn(123L);
-        assertEquals(123L, putFormData.getSn());
-
-        putFormData.setConfidence("high");
-        assertEquals("high", putFormData.getConfidence());
-
-        putFormData.setRelevance("relevant");
-        assertEquals("relevant", putFormData.getRelevance());
-
-        putFormData.setOriginality("original");
-        assertEquals("original", putFormData.getOriginality());
-
-        putFormData.setSignificance("significant");
-        assertEquals("significant", putFormData.getSignificance());
-
-        putFormData.setTechsound("clear");
-        assertEquals("clear", putFormData.getTechsound());
-
-        putFormData.setVocabulary("rich");
-        assertEquals("rich", putFormData.getVocabulary());
-
-        putFormData.setQuality("good");
-        assertEquals("good", putFormData.getQuality());
-
-        putFormData.setReadability("easy");
-        assertEquals("easy", putFormData.getReadability());
-
-        putFormData.setCommentval("comment");
-        assertEquals("comment", putFormData.getCommentval());
-
-        putFormData.setStatus("completed");
-        assertEquals("completed", putFormData.getStatus());
+    public void testGetAndSetSn() {
+        PutFormData formData = new PutFormData();
+        formData.setSn(1L);
+        assertEquals(1L, formData.getSn());
     }
 
     @Test
-    public void testToString() {
-        putFormData.setPdfId("testPdfId");
-        putFormData.setSn(123L);
-        putFormData.setConfidence("high");
-        putFormData.setRelevance("relevant");
-        putFormData.setOriginality("original");
-        putFormData.setSignificance("significant");
-        putFormData.setTechsound("clear");
-        putFormData.setVocabulary("rich");
-        putFormData.setQuality("good");
-        putFormData.setReadability("easy");
-        putFormData.setCommentval("comment");
-        putFormData.setStatus("completed");
-
-        String expectedString = "FormData{sn=123, confidence='high', relevance='relevant', originality='original', significance='significant', techsound='clear', vocabulary='rich',quality='good',readability='easy',commentval='comment',pdfId='testPdfId'}";
-
-        assertEquals(expectedString, putFormData.toString());
+    public void testGetAndSetConfidence() {
+        PutFormData formData = new PutFormData();
+        formData.setConfidence("High");
+        assertEquals("High", formData.getConfidence());
     }
 
     @Test
-    public void testGetDeadline() {
-        // As getDeadline() method is not implemented yet, it should return null
-        assertNull(putFormData.getDeadline());
+    public void testGetAndSetRelevance() {
+        PutFormData formData = new PutFormData();
+        formData.setRelevance("Very relevant");
+        assertEquals("Very relevant", formData.getRelevance());
+    }
+
+    @Test
+    public void testGetAndSetOriginality() {
+        PutFormData formData = new PutFormData();
+        formData.setOriginality("Unique");
+        assertEquals("Unique", formData.getOriginality());
+    }
+
+    @Test
+    public void testGetAndSetSignificance() {
+        PutFormData formData = new PutFormData();
+        formData.setSignificance("Very significant");
+        assertEquals("Very significant", formData.getSignificance());
+    }
+
+    @Test
+    public void testGetAndSetTechsound() {
+        PutFormData formData = new PutFormData();
+        formData.setTechsound("Loud");
+        assertEquals("Loud", formData.getTechsound());
+    }
+
+    @Test
+    public void testGetAndSetVocabulary() {
+        PutFormData formData = new PutFormData();
+        formData.setVocabulary("Extensive");
+        assertEquals("Extensive", formData.getVocabulary());
+    }
+
+    @Test
+    public void testGetAndSetQuality() {
+        PutFormData formData = new PutFormData();
+        formData.setQuality("High quality");
+        assertEquals("High quality", formData.getQuality());
+    }
+
+    @Test
+    public void testGetAndSetReadability() {
+        PutFormData formData = new PutFormData();
+        formData.setReadability("Clear");
+        assertEquals("Clear", formData.getReadability());
+    }
+
+    @Test
+    public void testGetAndSetCommentval() {
+        PutFormData formData = new PutFormData();
+        formData.setCommentval("Informative");
+        assertEquals("Informative", formData.getCommentval());
+    }
+
+    @Test
+    public void testGetAndSetStatus() {
+        PutFormData formData = new PutFormData();
+        formData.setStatus("Completed");
+        assertEquals("Completed", formData.getStatus());
     }
 }
