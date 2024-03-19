@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <style>
         body {
-            background-color: plum;
+            background-color: #d4e3ff; /* pastel blue background */
             margin-top: 50px; /* Added margin to accommodate the fixed navbar */
+            font-family: Arial, sans-serif; /* Change font for better readability */
         }
 
         .navbar {
@@ -40,16 +41,30 @@
             background-color: #fff;
             box-shadow: 0 1px 1px rgba(0,0,0,0.05);
             margin-top: 25px;
+            animation: fadeIn 1s ease; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .panel-title {
             text-align: center;
             margin-top: 20px;
             margin-bottom: 20px;
+            color: #007bff; /* pastel blue title color */
+            font-size: 28px; /* Increased font size */
+            transition: transform 0.5s ease; /* Add transition for hover effect */
+        }
+
+        .panel-title:hover {
+            transform: scale(1.1); /* Scale up on hover */
         }
 
         .panel-body {
             padding: 20px;
+            text-align: center; /* Center align content */
         }
 
         .form-group {
@@ -64,22 +79,35 @@
             width: 100%;
             padding: 10px;
             font-size: 16px;
+            transition: border-color 0.3s ease; /* Add transition for input focus */
         }
 
-        .btn-success {
-            background-color: #5cb85c;
-            color: #fff;
+        .form-control:focus {
+            border-color: #007bff; /* Change border color on focus */
         }
 
-        .btn-success:hover {
-            background-color: #4cae4c;
+        .btn-primary {
+            background-color: #007bff; /* pastel blue button color */
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
         }
 
         .panel-footer {
             text-align: center;
             padding: 10px;
-            background-color: lavender;
-            border-top: 1px solid lemonchiffon;
+            background-color: #cfe2ff; /* Lighter shade of pastel blue */
+            border-top: 1px solid #8dbdff; /* Border color */
+        }
+
+        .ascii-art {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* pastel blue title color */
+            font-family: monospace; /* Use monospace font for ASCII art */
         }
     </style>
 </head>
@@ -92,6 +120,10 @@
             </div>
 
             <div class="panel-body" id="login-panel-body">
+                <!-- Insert logo image --><!-- 
+                <img src="github.png" alt="Logo" width="100" height="100"> -->
+                
+
                 <!-- Thymeleaf fragment for success message -->
                 <div th:if="${param.success}" class="alert alert-success">
                     <span>Login successful!</span>
@@ -106,7 +138,6 @@
 
                     <div class="form-group">
                         <button type="button" onclick="window.location.href='/oauth2/authorization/github'" class="btn btn-primary form-control">GitHub Authentication</button>
-                        
                     </div>
                 </form>
             </div>
@@ -119,5 +150,10 @@
 
     <script th:src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
     <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script>
+        // Add animations or interactive features using JavaScript here
+        // For example, you can add animations to the buttons or form inputs.
+        // In this example, we're using CSS transitions for most animations.
+    </script>
 </body>
 </html>
