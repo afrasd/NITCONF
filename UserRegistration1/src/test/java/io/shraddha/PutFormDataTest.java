@@ -1,8 +1,10 @@
-package io.shraddha.model;
+package io.shraddha;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import io.shraddha.model.PutFormData;
 
 public class PutFormDataTest {
 
