@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #d4e3ff; 
             color: #333;
             margin: 0;
             padding: 0;
@@ -15,33 +15,64 @@
         .container {
             max-width: 600px;
             margin: 50px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px 50px; /* Increased padding */
+            background-color: #fff;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Darker shadow for depth */
+            transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
+            text-align: center; /* Center align content */
+        }
+        .container:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+        .profile {
+            width: 150px; /* Adjust profile image width */
+            height: 150px; /* Adjust profile image height */
+            border-radius: 50%; /* Make it circular */
+            margin: 0 auto 20px; /* Center image and add margin */
+            display: block; /* Ensure block-level display for centering */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
         h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
+            color: #007bff; /* Eye-catching pastel blue */
+            font-size: 28px; /* Increased font size */
+            animation: bounceIn 1s ease-in-out; /* Bounce-in animation */
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         p {
-            margin-bottom: 15px;
-            font-size: 18px;
-            line-height: 1.6;
+            margin-bottom: 20px; /* Increased margin */
+            animation: slideIn 1s ease-in-out; /* Slide-in animation */
+            font-size: 18px; /* Increased font size */
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         span {
             font-weight: bold;
-            color: #007bff;
+            color: #007bff; /* Eye-catching pastel blue */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>User Profile</h1>
-        <p><strong>Username:</strong> <span th:text="${username}"></span></p>
-        <p><strong>Email:</strong> <span th:text="${email}"></span></p>
-        <p><strong>Tags:</strong> <span th:text="${tags}"></span></p>
+        <img src="" class="profile" th:src="@{/images/github_profile.jpeg}" />
+        <p>Username: <span th:text="${username}"></span></p>
+        <p>Email: <span th:text="${email}"></span></p>
+        <p>Tags: <span th:text="${tags}"></span></p>
     </div>
+
+    <script>
+        // Add dynamic JavaScript animations here
+        // For example, you can use libraries like Anime.js or GSAP for animations
+    </script>
 </body>
 </html>
