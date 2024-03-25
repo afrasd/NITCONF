@@ -35,9 +35,10 @@ public class ToDoItemServiceTest {
 
     @BeforeEach
     public void setUp() {
-        toDoItemRepository = mock(ToDoItemRepository.class);
-        toAddFormRepository = mock(ToAddFormRepository.class);
-        toDoItemService = new ToDoItemService(toDoItemRepository);
+        // toDoItemRepository = mock(ToDoItemRepository.class);
+        // toAddFormRepository = mock(ToAddFormRepository.class);
+        // toDoItemService = new ToDoItemService(toDoItemRepository);
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
