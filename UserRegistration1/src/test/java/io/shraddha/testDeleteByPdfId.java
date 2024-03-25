@@ -3,13 +3,25 @@
 	import static org.mockito.Mockito.*;
 	
 	import org.junit.jupiter.api.Test;
-	
-	import io.shraddha.repo.ToDoItemRepository;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import io.shraddha.repo.ToAddFormRepository;
+import io.shraddha.repo.ToDoItemRepository;
 	import io.shraddha.service.ToDoItemService;
 	
 	public class testDeleteByPdfId {
-	
+
+	    @Mock
+	    private ToDoItemRepository toDoItemRepository;
+
+	    @Mock
+	    private ToAddFormRepository toAddFormRepository;
+
+	    @InjectMocks
 	    private ToDoItemService toDoItemService;
+	    
+//	    private ToDoItemService toDoItemService;
 	
 	    @Test
 	    public void testDeleteByPdfId1() {

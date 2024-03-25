@@ -10,6 +10,8 @@ import io.shraddha.service.ToDoItemService;
 import io.shraddha.repo.ToAddFormRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,9 +20,18 @@ import java.util.Optional;
 
 public class ToDoItemServiceTest {
 
-    private ToDoItemService toDoItemService;
+    @Mock
     private ToDoItemRepository toDoItemRepository;
+
+    @Mock
     private ToAddFormRepository toAddFormRepository;
+
+    @InjectMocks
+    private ToDoItemService toDoItemService;
+    
+//    private ToDoItemService toDoItemService;
+//    private ToDoItemRepository toDoItemRepository;
+//    private ToAddFormRepository toAddFormRepository;
 
     @BeforeEach
     public void setUp() {
