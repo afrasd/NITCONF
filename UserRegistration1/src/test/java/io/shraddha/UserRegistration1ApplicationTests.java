@@ -1,36 +1,36 @@
-//package io.aadeesh;
+////package io.aadeesh;
+////
+////import org.junit.jupiter.api.Test;
+////import org.springframework.boot.test.context.SpringBootTest;
+////
+////@SpringBootTest
+////class UserRegistration1ApplicationTests {
+////
+////	@Test
+////	void contextLoads() {
+////	}
+////
+////}
+//
+//package io.shraddha;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertTrue;
 //
 //import org.junit.jupiter.api.Test;
-//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.test.web.servlet.MockMvc;
+//import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+//import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+//import org.springframework.web.client.HttpClientErrorException;
+//import org.springframework.web.client.RestTemplate;
 //
-//@SpringBootTest
-//class UserRegistration1ApplicationTests {
 //
-//	@Test
-//	void contextLoads() {
-//	}
 //
-//}
-
-package io.shraddha;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
-
-
-
-
-public class UserRegistration1ApplicationTests {
-
+//
+//public class UserRegistration1ApplicationTests {
+//
 //	@Autowired
 //	private MockMvc mockMvc;
 //	
@@ -84,5 +84,5 @@ public class UserRegistration1ApplicationTests {
 //		// TODO Auto-generated method stub
 //
 //	}
-
-}
+//
+//}

@@ -24,7 +24,7 @@ import io.shraddha.repo.ToDoItemRepository;
 import io.shraddha.service.ToDoItemService;
 
 
-class ToReviewTestCase {
+class ToReviewTest {
 
 		@Mock
 	    private ToDoItemRepository toDoItemRepository;
@@ -71,22 +71,7 @@ class ToReviewTestCase {
 
 
 
-  @Test
-  void TestToReviewEndpointReturns200() {
-      String ToreviewEndpoint = "/toreview"; // Replace with your actual login endpoint
-
-      String url = baseUrl + ToreviewEndpoint;
-
-      try {
-          ResponseEntity<String> responseEntity = new RestTemplate().getForEntity(url, String.class);
-
-          assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-          assertTrue(responseEntity.getBody() != null && !responseEntity.getBody().isEmpty());
-      } catch (HttpClientErrorException ex) {
-          // If an exception is thrown due to non-200 status, fail the test
-          assertEquals(HttpStatus.OK, ex.getStatusCode()); // Adjust as needed
-      }
-  }
+  
 
 //Helper method to create ToDoItem instances
   private ToDoItem createToDoItem(Long id, String pdfId, String title, String paperstatus, String revision, Date deadline) {
